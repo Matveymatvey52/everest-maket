@@ -1,0 +1,521 @@
+<!--meta {"title": "Everest — квартиры в новостройках Москвы и Московской области", "desc": "Подберём новостройку в Москве и Подмосковье под ваш бюджет за 24 часа. Для покупателя бесплатно: комиссию платит застройщик. Личный брокер Екатерина Чукомина.", "nav": "", "page": "home", "extra_head": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"RealEstateAgent\",\"name\":\"Everest\",\"founder\":{\"@type\":\"Person\",\"name\":\"Екатерина Чукомина\"},\"telephone\":\"+7 967 010-81-18\",\"areaServed\":[\"Москва\",\"Московская область\"],\"openingHours\":\"Mo-Su 09:00-21:00\",\"sameAs\":[\"https://t.me/InvestEkaterina\"]}</script>"} -->
+
+<!-- Блок 1. Что вы продаёте? -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div>
+      <h1 class="h1 hero__title" id="hero-title"><span class="line">Квартиры</span> <span class="line">в новостройках</span> <span class="line">Москвы и Московской</span> <span class="line">области</span></h1>
+      <p class="hero__lead hero__fade">Подберём три варианта под ваш бюджет за 24 часа. <strong>Для покупателя бесплатно</strong>: вознаграждение нам платит застройщик, а цена квартиры та же, что в офисе продаж.</p>
+
+      <form class="search hero__fade" id="hero-search" role="search" aria-label="Поиск квартиры">
+        <div class="search__row">
+          <div class="field">
+            <span class="field__label" id="sr-rooms">Комнаты</span>
+            <div class="search__rooms" role="group" aria-labelledby="sr-rooms">
+              <button class="chip" type="button" data-room="studio" aria-pressed="false">Ст</button>
+              <button class="chip" type="button" data-room="1" aria-pressed="false">1</button>
+              <button class="chip" type="button" data-room="2" aria-pressed="false">2</button>
+              <button class="chip" type="button" data-room="3" aria-pressed="false">3</button>
+              <button class="chip" type="button" data-room="4" aria-pressed="false">4+</button>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="sr-max">Бюджет до</label>
+            <select class="select" id="sr-max" name="max">
+              <option value="0">Любой</option>
+              <option value="8">8 млн ₽</option>
+              <option value="10">10 млн ₽</option>
+              <option value="12">12 млн ₽</option>
+              <option value="15">15 млн ₽</option>
+              <option value="20">20 млн ₽</option>
+              <option value="30">30 млн ₽</option>
+              <option value="50">50 млн ₽</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="sr-deadline">Срок сдачи</label>
+            <select class="select" id="sr-deadline" name="deadline">
+              <option value="any">Любой</option>
+              <option value="ready">Дом сдан</option>
+              <option value="2026">До конца 2026</option>
+              <option value="2027">До конца 2027</option>
+              <option value="2028">2028 и позже</option>
+            </select>
+          </div>
+        </div>
+        <div class="search__foot">
+          <div class="field">
+            <label class="field__label" for="sr-q">Район, метро или ЖК</label>
+            <input class="input" id="sr-q" name="q" list="places" placeholder="Например, Красногорск или «Технопарк»" autocomplete="off">
+            <datalist id="places" data-places></datalist>
+          </div>
+          <button class="btn btn--gold" type="submit" data-search-submit style="align-self:end">Показать квартиры</button>
+        </div>
+        <p class="search__hint">Не знаете, с чего начать? <a href="#" data-open="quiz">Ответьте на пять вопросов</a>, подберём вручную.</p>
+      </form>
+
+      <div class="hero__stats hero__fade">
+        <div class="hero__stat"><b>8 лет</b><span>на рынке новостроек</span></div>
+        <div class="hero__stat"><b>3 200+</b><span>семей переехали</span></div>
+        <div class="hero__stat"><b>0 ₽</b><span>платит покупатель</span></div>
+      </div>
+    </div>
+
+    <figure class="peak">
+      <div class="peak__media">
+        <div class="peak__frame"><img src="assets/img/ekaterina.jpg" alt="Екатерина Чукомина, основатель Everest" width="700" height="875" fetchpriority="high"></div>
+        <svg class="peak__line" viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 86 L200 1 L399 86 L399 499 L1 499 Z"/></svg>
+        <a class="float-card" href="#" data-float-flat="sb-1"></a>
+      </div>
+      <figcaption class="peak__caption hero__fade">
+        <span><b>Екатерина Чукомина</b>основатель Everest, брокер по новостройкам</span>
+        <a class="peak__tg" href="https://t.me/katerina1018" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>Написать</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Блок 1. Витрина ЖК -->
+<section class="section" id="vitrina" aria-labelledby="vitrina-title">
+  <div class="container">
+    <div class="section-head section-head--split reveal">
+      <h2 class="h2" id="vitrina-title">Жилые комплексы, которые мы проверили сами</h2>
+      <p class="lead">В карточке — цена, срок сдачи, застройщик, метраж и дорога до метро. Фильтры по цене, району и сроку, карта и 3D-туры — в каталоге.</p>
+    </div>
+    <div class="filters-row">
+      <div class="chips" role="group" aria-label="Где искать">
+        <button class="chip" type="button" data-region="any" aria-pressed="true">Все</button>
+        <button class="chip" type="button" data-region="moscow" aria-pressed="false">Москва</button>
+        <button class="chip" type="button" data-region="newmoscow" aria-pressed="false">Новая Москва</button>
+        <button class="chip" type="button" data-region="mo" aria-pressed="false">Подмосковье</button>
+        <button class="chip" type="button" data-region="ready" aria-pressed="false">Дом сдан</button>
+      </div>
+      <a class="link-arrow" href="katalog.html?mode=zhk&amp;view=map"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-map"/></svg>Открыть на карте</a>
+    </div>
+    <div class="zhk-grid" id="vitrine" aria-live="polite"></div>
+
+    <div class="row-between mt-xl reveal">
+      <h3 class="h2" style="font-size:clamp(1.6rem,1.3rem + 1.2vw,2.4rem)">Квартиры недели со скидкой</h3>
+      <a class="btn btn--ghost" href="katalog.html">Все квартиры и фильтры<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+    <div class="flat-grid mt-m" id="weekly-flats"></div>
+
+    <div class="closed reveal">
+      <div class="closed__text">
+        <h3 class="h2" style="font-size:clamp(1.7rem,1.3rem + 1.4vw,2.6rem)">Квартиры, которых нет в открытой продаже</h3>
+        <p>Застройщик придерживает лоты до старта продаж, собственник не хочет огласки. О таких квартирах узнают те, кто спросил первым. Покажем лично.</p>
+        <a class="btn btn--gold" href="https://t.me/katerina1018" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>Спросить о закрытых лотах</a>
+      </div>
+      <div class="closed__cards">
+        <div class="lot"><img src="assets/img/int-olive-2.webp" alt="" loading="lazy"><div class="lot__in"><span class="lot__lock"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg></span><div><p class="lot__t">3-комнатная, 96 м²</p><p class="lot__s">Хамовники, дом сдан</p><span class="lot__d">−12% к рынку</span></div></div></div>
+        <div class="lot"><img src="assets/img/int-balcony.webp" alt="" loading="lazy"><div class="lot__in"><span class="lot__lock"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg></span><div><p class="lot__t">Пентхаус с террасой</p><p class="lot__s">Пресня, старт через месяц</p><span class="lot__d">цена до старта</span></div></div></div>
+        <div class="lot"><img src="assets/img/int-sunny.webp" alt="" loading="lazy"><div class="lot__in"><span class="lot__lock"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg></span><div><p class="lot__t">Евро-2, 48 м²</p><p class="lot__s">Нагатинский затон</p><span class="lot__d">−9% по брони</span></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 2. В чём суть предложения? -->
+<section class="section section--frost" aria-labelledby="offer-title">
+  <div class="container">
+    <div class="offer">
+      <div class="offer__text reveal">
+        <h2 class="h2 offer__title" id="offer-title">Подберём новостройку под ваши задачи — от&nbsp;бюджета до локации</h2>
+        <p class="lead">Скажите, сколько готовы платить в месяц и где хотите жить. Мы сравним предложения 50+ застройщиков, договоримся о скидке и проведём сделку. В итоге у вас ключи от квартиры, а не пачка ссылок на объявления.</p>
+        <div class="offer__cta">
+          <button class="btn btn--gold" type="button" data-open="quiz">Подобрать квартиру</button>
+          <a class="btn btn--ghost" href="https://t.me/katerina1018" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>Задать вопрос</a>
+        </div>
+      </div>
+      <div class="benefits reveal">
+        <div class="benefit"><span class="benefit__ico"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></span><div><h3>Подбор</h3><p>Три варианта за 24 часа под ваш бюджет, район и сроки. Без навязывания «своего» застройщика.</p></div></div>
+        <div class="benefit"><span class="benefit__ico"><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg></span><div><h3>Скидки</h3><p>Партнёрские скидки до 7% и спецставки от застройщиков. В офисе продаж о них не расскажут.</p></div></div>
+        <div class="benefit"><span class="benefit__ico"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>Сопровождение</h3><p>Проверяем застройщика и договор, помогаем с ипотекой и приёмкой. Ведём до ключей.</p></div></div>
+      </div>
+    </div>
+    <div class="offer__media reveal"><img src="assets/img/int-green-sofa.webp" alt="Светлая гостиная с зелёным диваном и видом на город" loading="lazy" width="1800" height="1200"></div>
+  </div>
+</section>
+
+<!-- Блок 3. Почему это должно меня заинтересовать? -->
+<section class="section" aria-labelledby="facts-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="h2" id="facts-title">Более 500 ЖК, аккредитованные застройщики, цены от застройщика</h2>
+    </div>
+    <div class="facts reveal">
+      <div class="fact-card"><div class="fact-card__top"><span class="fact-card__num">500+</span><svg class="ico ico--lg fact-card__ico" aria-hidden="true"><use href="#i-building"/></svg></div><p class="fact-card__t">ЖК в базе</p><p class="fact-card__p">Москва, Новая Москва и область: от студий до пентхаусов.</p></div>
+      <div class="fact-card"><div class="fact-card__top"><span class="fact-card__num">50+</span><svg class="ico ico--lg fact-card__ico" aria-hidden="true"><use href="#i-shield"/></svg></div><p class="fact-card__t">аккредитованных застройщиков</p><p class="fact-card__p">Только те, кого проверили и аккредитовали банки.</p></div>
+      <div class="fact-card"><div class="fact-card__top"><span class="fact-card__num">до 15%</span><svg class="ico ico--lg fact-card__ico" aria-hidden="true"><use href="#i-percent"/></svg></div><p class="fact-card__t">экономии</p><p class="fact-card__p">Скидки застройщика, спецставки и бесплатная помощь с ипотекой.</p></div>
+      <div class="fact-card"><div class="fact-card__top"><span class="fact-card__num">0 ₽</span><svg class="ico ico--lg fact-card__ico" aria-hidden="true"><use href="#i-wallet"/></svg></div><p class="fact-card__t">комиссия для покупателя</p><p class="fact-card__p">Цена та же, что в офисе продаж. Часто ниже.</p></div>
+      <div class="fact-card"><div class="fact-card__top"><span class="fact-card__num">24 часа</span><svg class="ico ico--lg fact-card__ico" aria-hidden="true"><use href="#i-clock"/></svg></div><p class="fact-card__t">на подборку</p><p class="fact-card__p">Три варианта с расчётом платежа приходят на следующий день.</p></div>
+      <div class="fact-card"><div class="fact-card__top"><span class="fact-card__num">8 лет</span><svg class="ico ico--lg fact-card__ico" aria-hidden="true"><use href="#i-key"/></svg></div><p class="fact-card__t">на рынке новостроек</p><p class="fact-card__p">Знаем, у кого сдача переносится и где в договоре подвох.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 4. Какую мою проблему это решает? -->
+<section class="section section--frost" aria-labelledby="ba-title">
+  <div class="container">
+    <div class="section-head section-head--split reveal">
+      <h2 class="h2" id="ba-title">Избавим от головной боли при выборе новостройки</h2>
+      <p class="lead">Четыре вещи, на которых покупатели теряют время и деньги, и что мы делаем вместо этого.</p>
+    </div>
+    <div class="ba__head" aria-hidden="true"><span>Было</span><span></span><span>Стало</span></div>
+    <div class="ba reveal">
+      <div class="ba__row"><div class="ba__was"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="ba__label">Было</span>Месяцами листаете объявления и ездите по офисам продаж</div></div><i class="ba__arrow" aria-hidden="true"></i><div class="ba__now"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="ba__label">Стало</span>Персональная подборка за 24 часа</div></div></div>
+      <div class="ba__row"><div class="ba__was"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="ba__label">Было</span>Страшно нарваться на недобросовестного застройщика</div></div><i class="ba__arrow" aria-hidden="true"></i><div class="ba__now"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="ba__label">Стало</span>Работаем только с аккредитованными застройщиками</div></div></div>
+      <div class="ba__row"><div class="ba__was"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="ba__label">Было</span>Банк отказал или предлагает дорогую ипотеку</div></div><i class="ba__arrow" aria-hidden="true"></i><div class="ba__now"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="ba__label">Стало</span>Помогаем с одобрением: заявка сразу в 7 банков</div></div></div>
+      <div class="ba__row"><div class="ba__was"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="ba__label">Было</span>Боитесь скрытых комиссий и доплат</div></div><i class="ba__arrow" aria-hidden="true"></i><div class="ba__now"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="ba__label">Стало</span>0% комиссии для покупателя, все условия — до сделки</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 5. Почему это выгодно? -->
+<section class="section section--pine" id="vygoda" aria-labelledby="calc-title">
+  <div class="container calc-wrap">
+    <div class="reveal">
+      <h2 class="h2" id="calc-title">Экономия до 15% + скидки от застройщика + бесплатная помощь с ипотекой</h2>
+      <p class="lead mt-m">Посчитайте платёж и выгоду на своей квартире. Ниже — суммы, которые сэкономили покупатели этой осенью.</p>
+      <div class="savings">
+        <div class="saving"><img src="assets/img/fam-green-sofa.webp" alt="" loading="lazy"><div><b>1 636 800 ₽</b><span>2-комнатная в «Клевер Парке»: скидка застройщика и семейная ипотека</span></div></div>
+        <div class="saving"><img src="assets/img/int-olive.webp" alt="" loading="lazy"><div><b>2 480 000 ₽</b><span>Евро-3 в «Северном береге»: спеццена для наших клиентов</span></div></div>
+        <div class="saving"><img src="assets/img/msk-glass.webp" alt="" loading="lazy"><div><b>16 577 922 ₽</b><span>Квартира № 124 в «Кутузове 12»: скидка 20% при полной оплате</span></div></div>
+      </div>
+    </div>
+
+    <div class="calc reveal" id="calc">
+      <div class="calc__tabs" role="tablist" aria-label="Программа ипотеки">
+        <button class="calc__tab" type="button" role="tab" aria-selected="true" data-prog="family">Семейная</button>
+        <button class="calc__tab" type="button" role="tab" aria-selected="false" data-prog="dev">Ставка от застройщика</button>
+        <button class="calc__tab" type="button" role="tab" aria-selected="false" data-prog="std">Стандартная</button>
+      </div>
+      <div class="calc__row">
+        <div class="calc__row-head"><label for="c-price">Стоимость квартиры</label><output data-out="price" for="c-price">15 млн ₽</output></div>
+        <input class="range" id="c-price" type="range" name="price" min="5" max="60" step="0.5" value="15">
+      </div>
+      <div class="calc__row">
+        <div class="calc__row-head"><label for="c-pv">Первый взнос</label><output data-out="pv" for="c-pv">20%</output></div>
+        <input class="range" id="c-pv" type="range" name="pv" min="20" max="90" step="5" value="20">
+      </div>
+      <div class="calc__row">
+        <div class="calc__row-head"><label for="c-years">Срок кредита</label><output data-out="years" for="c-years">30 лет</output></div>
+        <input class="range" id="c-years" type="range" name="years" min="10" max="30" step="1" value="30">
+      </div>
+      <div class="calc__row" data-kids-row>
+        <div class="calc__row-head"><span id="c-kids">Детей в семье</span></div>
+        <div class="calc__kids" data-kids role="group" aria-labelledby="c-kids">
+          <button class="chip" type="button" data-k="1" aria-pressed="true">1</button>
+          <button class="chip" type="button" data-k="2" aria-pressed="false">2</button>
+          <button class="chip" type="button" data-k="3" aria-pressed="false">3</button>
+          <button class="chip" type="button" data-k="4" aria-pressed="false">4</button>
+          <button class="chip" type="button" data-k="5" aria-pressed="false">5+</button>
+        </div>
+      </div>
+      <p class="calc__note" data-out="note" aria-live="polite"></p>
+      <div class="calc__result" aria-live="polite">
+        <div class="calc__res calc__res--main"><span>Платёж в месяц</span><b data-out="pay">—</b></div>
+        <div class="calc__res"><span>Ставка</span><b data-out="rate">—</b></div>
+        <div class="calc__res"><span>Сумма кредита</span><b data-out="loan">—</b></div>
+      </div>
+      <p class="caption" data-out="diff"></p>
+      <div class="calc__benefit">
+        <b data-out="total">—</b>
+        <p>Ваша выгода с Everest: скидка застройщика, комиссия агентства, которую вы не платите, и скидка на страховку.</p>
+      </div>
+      <div class="bar">
+        <div class="bar__track"><span class="bar__seg" style="background:var(--gold)"></span><span class="bar__seg" style="background:var(--pine)"></span><span class="bar__seg" style="background:#9fb8ac"></span></div>
+        <div class="bar__legend">
+          <span><i style="background:var(--gold)"></i>Скидка застройщика, 5%: <b data-out="b1"></b></span>
+          <span><i style="background:var(--pine)"></i>Без комиссии агентства, 2%: <b data-out="b2"></b></span>
+          <span><i style="background:#9fb8ac"></i>Страховка −30%: <b data-out="b3"></b></span>
+        </div>
+      </div>
+      <button class="btn btn--gold btn--block" type="button" data-open="quiz">Посчитать на реальных квартирах</button>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 6. Как это работает? -->
+<section class="section" aria-labelledby="steps-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="h2" id="steps-title">4 шага до вашей новой квартиры</h2>
+    </div>
+    <ol class="steps reveal">
+      <li class="step"><span class="step__n">1</span><h3 class="h3">Заявка или звонок</h3><p>Оставляете заявку на сайте или пишете в Telegram. Задаём пять вопросов о бюджете и планах.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>10 минут</span></li>
+      <li class="step"><span class="step__n">2</span><h3 class="h3">Персональный подбор</h3><p>Присылаем три варианта с расчётом платежа и честными минусами каждого ЖК.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>24 часа</span></li>
+      <li class="step"><span class="step__n">3</span><h3 class="h3">Просмотр или онлайн-презентация</h3><p>Едем на объект вместе или показываем квартиру по видео, если вы в другом городе.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>1–3 дня</span></li>
+      <li class="step"><span class="step__n">4</span><h3 class="h3">Бронирование и сделка</h3><p>Фиксируем цену, проверяем договор, оформляем ипотеку и ведём до ключей.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>1–2 недели</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Блок 7. Чем вы отличаетесь от конкурентов? -->
+<section class="section section--frost" aria-labelledby="compare-title">
+  <div class="container">
+    <div class="section-head section-head--split reveal">
+      <h2 class="h2" id="compare-title">Мы не агентство. Мы — ваш личный эксперт по новостройкам</h2>
+      <p class="lead">Сравните, как покупают квартиру сами, через обычное агентство и с нами.</p>
+    </div>
+    <div class="compare reveal" role="table" aria-label="Сравнение: Everest, офис продаж, агентство">
+      <div class="compare__head" role="row">
+        <div role="columnheader"><span class="sr-only">Что важно</span></div>
+        <div class="is-us" role="columnheader"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg>Everest</div>
+        <div role="columnheader">Сами в офисе продаж</div>
+        <div role="columnheader">Обычное агентство</div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--k" role="rowheader">Прямые договоры с застройщиками</div>
+        <div class="compare__cell compare__cell--us" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="compare__who">Everest</span>50+ застройщиков</div></div>
+        <div class="compare__cell compare__cell--mid" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg><div><span class="compare__who">Офис продаж</span>Только свой ЖК</div></div>
+        <div class="compare__cell compare__cell--mid" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg><div><span class="compare__who">Агентство</span>Не со всеми</div></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--k" role="rowheader">Комиссия для покупателя</div>
+        <div class="compare__cell compare__cell--us" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="compare__who">Everest</span>0%</div></div>
+        <div class="compare__cell" role="cell"><svg class="ico" style="color:var(--gold-ink)" aria-hidden="true"><use href="#i-check"/></svg><div><span class="compare__who">Офис продаж</span>0%</div></div>
+        <div class="compare__cell compare__cell--no" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="compare__who">Агентство</span>2–3% от цены</div></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--k" role="rowheader">Юридическое сопровождение</div>
+        <div class="compare__cell compare__cell--us" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="compare__who">Everest</span>Проверяем застройщика и ДДУ</div></div>
+        <div class="compare__cell compare__cell--no" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="compare__who">Офис продаж</span>Юрист на стороне застройщика</div></div>
+        <div class="compare__cell compare__cell--mid" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg><div><span class="compare__who">Агентство</span>За доплату</div></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--k" role="rowheader">Персональный менеджер</div>
+        <div class="compare__cell compare__cell--us" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="compare__who">Everest</span>Один человек от заявки до ключей</div></div>
+        <div class="compare__cell compare__cell--no" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="compare__who">Офис продаж</span>Продаёт свой ЖК</div></div>
+        <div class="compare__cell compare__cell--mid" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg><div><span class="compare__who">Агентство</span>Меняется по ходу сделки</div></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--k" role="rowheader">Скидки и спецусловия</div>
+        <div class="compare__cell compare__cell--us" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="compare__who">Everest</span>До 7% по партнёрской программе</div></div>
+        <div class="compare__cell compare__cell--mid" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg><div><span class="compare__who">Офис продаж</span>Только общие акции</div></div>
+        <div class="compare__cell compare__cell--mid" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg><div><span class="compare__who">Агентство</span>Редко</div></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--k" role="rowheader">Помощь с приёмкой квартиры</div>
+        <div class="compare__cell compare__cell--us" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="compare__who">Everest</span>Инженер на приёмке</div></div>
+        <div class="compare__cell compare__cell--no" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="compare__who">Офис продаж</span>Нет</div></div>
+        <div class="compare__cell compare__cell--no" role="cell"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="compare__who">Агентство</span>Нет</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 8. Сколько стоят ваши услуги? -->
+<section class="section" aria-labelledby="price-title">
+  <div class="container">
+    <div class="section-head section-head--split reveal">
+      <h2 class="h2" id="price-title">Бесплатно для покупателя. Мы зарабатываем на комиссии от застройщика</h2>
+      <p class="lead">Застройщик платит нам из маркетингового бюджета — того же, из которого платит за рекламу. Цена квартиры для вас не растёт.</p>
+    </div>
+    <div class="money-flow reveal">
+      <div class="flow-node"><b>Вы</b><p>Платите застройщику цену из прайса, часто со скидкой, которую мы выбили.</p></div>
+      <span class="flow-arrow" aria-hidden="true"><svg class="ico ico--lg"><use href="#i-arrow-right"/></svg></span>
+      <div class="flow-node flow-node--us"><b>Everest</b><p>Подбираем, торгуемся, проверяем документы и ведём сделку.</p></div>
+      <span class="flow-arrow" aria-hidden="true"><svg class="ico ico--lg"><use href="#i-arrow-right"/></svg></span>
+      <div class="flow-node"><b>Застройщик</b><p>Платит нам вознаграждение после регистрации договора.</p></div>
+    </div>
+    <div class="plans reveal">
+      <div class="plan-card plan-card--main">
+        <span class="tag tag--gold plan-card__badge">Основная услуга</span>
+        <h3 class="h3">Покупка новостройки</h3>
+        <div class="plan-card__price">0 ₽<small>платит застройщик</small></div>
+        <ul class="checklist">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Подборка из 500+ ЖК за 24 часа</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Скидка и бронь по текущей цене</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Одобрение ипотеки сразу в 7 банках</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Проверка застройщика и договора</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Сопровождение до регистрации и ключей</li>
+        </ul>
+        <button class="btn btn--gold btn--block" type="button" data-open="quiz">Подобрать квартиру</button>
+      </div>
+      <div class="plan-card">
+        <h3 class="h3">Вторичка под ключ</h3>
+        <div class="plan-card__price">1,5%<small>от цены, от 150 000 ₽</small></div>
+        <ul class="checklist">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Подбор, показы и торг</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Проверка квартиры за 15 лет</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Безопасные расчёты через аккредитив</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Сделка и передача ключей</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="uslugi.html">Подробнее об услуге</a>
+      </div>
+      <div class="plan-card">
+        <h3 class="h3">Проверка квартиры</h3>
+        <div class="plan-card__price">25 000 ₽<small>за объект</small></div>
+        <ul class="checklist">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Залоги, аресты, обременения</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>История права собственности</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Согласие супруга и долги</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Письменное заключение о рисках</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="uslugi.html">Все услуги и цены</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 9. Можно ли вам довериться? -->
+<section class="section section--frost" aria-labelledby="trust-title">
+  <div class="container">
+    <div class="section-head reveal" style="max-width:1000px">
+      <h2 class="h2" id="trust-title">8 лет на рынке, 3 200+ счастливых семей, партнёрство с 50+ застройщиками</h2>
+    </div>
+    <div class="trust">
+      <figure class="portrait reveal">
+        <div class="portrait__frame"><img src="assets/img/ekaterina.jpg" alt="Екатерина Чукомина" loading="lazy" width="700" height="875"></div>
+        <figcaption class="portrait__sign"><b>Екатерина Чукомина</b><span class="caption">основатель Everest</span></figcaption>
+      </figure>
+      <div class="reveal">
+        <blockquote class="quote">Я не проверяю людей. Я проверяю факты.</blockquote>
+        <div class="trust__bio">
+          <p>Экономист по образованию. Подбираю квартиры, езжу на объекты и веду сделки сама: клиенты общаются со мной, а не с ассистентом.</p>
+          <p>Работаю с новостройками, вторичным жильём, загородной и коммерческой недвижимостью. Больше трети клиентов приходят по рекомендации тех, кому мы уже помогли.</p>
+        </div>
+        <div class="ratings">
+          <div class="rating"><span class="rating__src">Яндекс Карты</span><span class="rating__v">5,0 <span class="stars" aria-label="5 из 5"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></span><span class="rating__n">128 оценок</span></div>
+          <div class="rating"><span class="rating__src">2ГИС</span><span class="rating__v">4,9 <span class="stars" aria-label="5 из 5"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></span><span class="rating__n">64 отзыва</span></div>
+          <div class="rating"><span class="rating__src">Авито</span><span class="rating__v">5,0 <span class="stars" aria-label="5 из 5"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></span><span class="rating__n">41 отзыв</span></div>
+        </div>
+        <div class="certs">
+          <div class="cert"><span class="cert__seal"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg></span><div><p class="cert__t">Аттестат специалиста по недвижимости</p><p class="cert__s">место под скан</p></div></div>
+          <div class="cert"><span class="cert__seal"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span><div><p class="cert__t">Партнёр ипотечных программ банков</p><p class="cert__s">место под скан</p></div></div>
+          <div class="cert"><span class="cert__seal"><svg class="ico" aria-hidden="true"><use href="#i-key"/></svg></span><div><p class="cert__t">Диплом экономиста</p><p class="cert__s">место под скан</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-label="Застройщики, с которыми работаем">
+      <div class="marquee__track">
+        <span class="marquee__item">ПИК</span><span class="marquee__item">Самолёт</span><span class="marquee__item">ФСК</span><span class="marquee__item">Level Group</span><span class="marquee__item">MR Group</span><span class="marquee__item">Донстрой</span><span class="marquee__item">Sminex</span><span class="marquee__item">Брусника</span><span class="marquee__item">ЛСР</span><span class="marquee__item">А101</span><span class="marquee__item">Эталон</span><span class="marquee__item">Гранель</span><span class="marquee__item">Pioneer</span><span class="marquee__item">ГК «Основа»</span>
+        <span class="marquee__item" aria-hidden="true">ПИК</span><span class="marquee__item" aria-hidden="true">Самолёт</span><span class="marquee__item" aria-hidden="true">ФСК</span><span class="marquee__item" aria-hidden="true">Level Group</span><span class="marquee__item" aria-hidden="true">MR Group</span><span class="marquee__item" aria-hidden="true">Донстрой</span><span class="marquee__item" aria-hidden="true">Sminex</span><span class="marquee__item" aria-hidden="true">Брусника</span><span class="marquee__item" aria-hidden="true">ЛСР</span><span class="marquee__item" aria-hidden="true">А101</span><span class="marquee__item" aria-hidden="true">Эталон</span><span class="marquee__item" aria-hidden="true">Гранель</span><span class="marquee__item" aria-hidden="true">Pioneer</span><span class="marquee__item" aria-hidden="true">ГК «Основа»</span>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <div class="row-between reveal"><h3 class="h2" style="font-size:clamp(1.6rem,1.3rem + 1.2vw,2.4rem)">Отзывы покупателей</h3><a class="link-arrow" href="obo-mne.html#otzyvy">Все отзывы<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
+      <div class="videos reveal">
+        <button class="video" type="button" data-video="семья Морозовых, ЖК «Клевер Парк»"><img src="assets/img/fam-green-sofa.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Семья Морозовых</b><span>2-комнатная в «Клевер Парке»</span></span></button>
+        <button class="video" type="button" data-video="Игорь, инвестор"><img src="assets/img/int-olive.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Игорь, инвестор</b><span>Две студии под сдачу</span></span></button>
+        <button class="video" type="button" data-video="Марина и Кирилл, ЖК «Лесная гавань»"><img src="assets/img/fam-moving.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Марина и Кирилл</b><span>Переезд в «Лесную гавань»</span></span></button>
+        <button class="video" type="button" data-video="Елена, переезд из Сургута"><img src="assets/img/fam-empty-flat.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Елена</b><span>Купила онлайн из Сургута</span></span></button>
+      </div>
+      <div class="texts reveal">
+        <figure class="review"><p>«Полгода искали двушку под семейную ипотеку. Екатерина за сутки прислала три варианта, один — в ЖК, о котором мы даже не слышали. Застройщик дал скидку 4%, а ипотеку одобрили на второй день».</p><figcaption class="review__who"><span><b>Анна и Сергей</b><span>«Клевер Парк», сентябрь 2026</span></span><span class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></figcaption></figure>
+        <figure class="review"><p>«Покупал студию под сдачу. Екатерина посчитала доходность по каждому варианту и отговорила от ЖК, где сдачу переносили второй раз. Квартиру уже сдаю, окупаемость сходится с её расчётом».</p><figcaption class="review__who"><span><b>Дмитрий</b><span>«Высота 9», август 2026</span></span><span class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></figcaption></figure>
+        <figure class="review"><p>«Переезжали из Казани и Москву не знали совсем. Показы прошли онлайн, на сделку прилетели один раз. В договоре Екатерина нашла пункт о переносе сроков, и застройщик его убрал».</p><figcaption class="review__who"><span><b>Ольга</b><span>«Лесная гавань», июль 2026</span></span><span class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 10. Что мне надо сделать? -->
+<section class="section section--pine lead-block" id="zayavka" aria-labelledby="lead-title">
+  <div class="lead-block__bg" aria-hidden="true"><img src="assets/img/msk-city-night.webp" alt="" loading="lazy"></div>
+  <div class="container lead-grid">
+    <div class="reveal">
+      <h2 class="h2" id="lead-title">Оставьте заявку — подберём 3 варианта за 24 часа</h2>
+      <p class="lead mt-m">Имя, телефон, бюджет и район — этого хватит, чтобы начать. Остальное спросим сами. Удобнее переписка — напишите в мессенджер.</p>
+      <div class="messengers">
+        <a class="msg-btn" href="https://t.me/katerina1018" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>Telegram</a>
+        <a class="msg-btn" href="https://wa.me/79670108118" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+        <a class="msg-btn" href="tel:+79670108118"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>+7&nbsp;967&nbsp;010-81-18</a>
+      </div>
+      <div class="gift">
+        <span class="gift__ico"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-gift"/></svg></span>
+        <p><b>В подарок — гайд «Семейная ипотека 2026».</b> Ставки по числу детей, лимиты и способ сохранить 6%. Пришлём вместе с подборкой.</p>
+      </div>
+    </div>
+    <div class="form-card reveal" data-form-host>
+      <form class="form-body" data-form novalidate>
+        <p class="form-card__title">Получить подборку</p>
+        <div class="form-card__grid">
+          <div class="field"><label class="field__label" for="ld-name">Имя</label><input class="input" id="ld-name" name="name" autocomplete="given-name" placeholder="Как к вам обращаться"></div>
+          <div class="field"><label class="field__label" for="ld-tel">Телефон</label><input class="input" id="ld-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><span class="field__error">Нужно 10 цифр после +7</span></div>
+          <div class="field"><label class="field__label" for="ld-budget">Бюджет</label>
+            <select class="select" id="ld-budget" name="budget"><option>До 10 млн ₽</option><option selected>10–15 млн ₽</option><option>15–25 млн ₽</option><option>25–50 млн ₽</option><option>От 50 млн ₽</option></select></div>
+          <div class="field"><label class="field__label" for="ld-place">Район</label><input class="input" id="ld-place" name="place" list="places-2" placeholder="Например, Хамовники" autocomplete="off"><datalist id="places-2" data-places></datalist></div>
+        </div>
+        <label class="consent"><input type="checkbox" name="consent" checked><span>Согласна(-ен) на обработку персональных данных</span></label>
+        <button class="btn btn--gold btn--block" type="submit">Получить подборку</button>
+        <p class="caption">Ответим в течение 15 минут, с 9:00 до 21:00. Без спама и навязчивых звонков.</p>
+      </form>
+      <div class="form-success" role="status">
+        <div class="form-success__ico"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-check"/></svg></div>
+        <p class="form-card__title">Заявка у Екатерины</p>
+        <p class="muted">Подборку пришлём в течение 24 часов. Гайд по семейной ипотеке — сразу после звонка.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 11. Хочу ли я это сделать? -->
+<section class="section" aria-labelledby="life-title">
+  <div class="container">
+    <div class="section-head section-head--split reveal">
+      <h2 class="h2" id="life-title">Представьте себя в новой квартире через 3 месяца</h2>
+      <p class="lead">Новый двор без машин, своя кухня-гостиная, тишина вместо съёмной квартиры. Через три месяца это может быть ваш обычный вечер.</p>
+    </div>
+    <div class="life reveal">
+      <figure class="life__item"><img src="assets/img/fam-empty-flat.webp" alt="Пара с собакой сидит на полу в пустой новой квартире" loading="lazy">
+        <div class="life__quote"><p>«Полгода искали сами, нашли за неделю. Сейчас пьём кофе на своей кухне и не верим, что это наша квартира».</p><span>Анна и Сергей, «Клевер Парк»</span></div>
+      </figure>
+      <figure class="life__item"><img src="assets/img/int-green-curtains.webp" alt="Гостиная с обеденным столом" loading="lazy"><figcaption>Вечер в кухне-гостиной</figcaption></figure>
+      <figure class="life__item"><img src="assets/img/fam-moving.webp" alt="Пара среди коробок с макетом дома в руках" loading="lazy"><figcaption>Переезд за один день</figcaption></figure>
+      <figure class="life__item"><img src="assets/img/int-sunny.webp" alt="Солнечная гостиная с видом на город" loading="lazy"><figcaption>Утро на 14-м этаже</figcaption></figure>
+      <figure class="life__item"><img src="assets/img/fam-kitchen.webp" alt="Семья с котом на кухне" loading="lazy"><figcaption>Ужин в своей кухне</figcaption></figure>
+      <figure class="life__item"><img src="assets/img/msk-ukraina.webp" alt="Вечерняя Москва и река" loading="lazy"><figcaption>Вид, ради которого выбирали этаж</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Блок 12. Почему мне это надо сделать сейчас? -->
+<section class="section section--pine now" aria-labelledby="now-title">
+  <div class="now__bg" aria-hidden="true"><img src="assets/img/msk-sunset-crane.webp" alt="" loading="lazy"></div>
+  <div class="container" style="position:relative">
+    <div class="section-head reveal" style="max-width:980px">
+      <h2 class="h2" id="now-title">Цены растут. Ключевая ставка меняется. Лучшее время — сегодня</h2>
+      <p class="lead">Новостройка дорожает по мере готовности дома, дешевле всего она на старте продаж. За год квадратный метр в Москве подорожал на <span data-growth>17%</span>, в среднем на <span data-growth-month>1,4%</span> в месяц.</p>
+    </div>
+    <div class="now__grid">
+      <div class="chart-card reveal">
+        <div class="chart-card__head"><span>Средняя цена м² в новостройках Москвы, тыс. ₽</span><b data-growth>+17%</b></div>
+        <div id="price-chart"></div>
+        <p class="caption" style="color:var(--on-dark-2)">В макете данные условные. На сайте подключим статистику ДОМ.РФ.</p>
+      </div>
+      <div class="timer-card reveal" data-deadline="2026-11-01T00:00:00+03:00">
+        <p class="h3">До повышения цен в «Клевер Парке»</p>
+        <div class="timer" role="timer" aria-label="Осталось до 1 ноября 2026">
+          <div class="timer__cell"><b data-t="d">00</b><span>дней</span></div>
+          <div class="timer__cell"><b data-t="h">00</b><span>часов</span></div>
+          <div class="timer__cell"><b data-t="m">00</b><span>минут</span></div>
+          <div class="timer__cell"><b data-t="s">00</b><span>секунд</span></div>
+        </div>
+        <p class="muted">1 ноября застройщик поднимает прайс на 3%. Бронь фиксирует текущую цену на 7 дней.</p>
+        <div class="timer-card__lot">
+          <img src="assets/img/zhk-klever-park.webp" alt="" loading="lazy">
+          <div><b>1-комнатная, 37,7 м²</b><br><span class="muted">9 048 000 ₽ вместо 10 556 000 ₽</span></div>
+        </div>
+        <button class="btn btn--gold btn--block" type="button" data-open="callback" data-context="Бронь по текущей цене, Клевер Парк" data-context-title="Успейте забронировать по текущей цене">Успейте забронировать по текущей цене</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Журнал -->
+<section class="section" aria-labelledby="journal-title">
+  <div class="container">
+    <div class="row-between reveal" style="margin-bottom:clamp(32px,4vw,56px)">
+      <div style="display:grid;gap:14px;max-width:720px">
+        <h2 class="h2" id="journal-title">Журнал: разборы из Telegram-канала</h2>
+        <p class="lead">Ипотека, эскроу и проверка сделок. Коротко и без воды.</p>
+      </div>
+      <a class="btn btn--ghost" href="zhurnal.html">Все статьи<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+    <div class="posts reveal" id="journal-teaser"></div>
+  </div>
+</section>

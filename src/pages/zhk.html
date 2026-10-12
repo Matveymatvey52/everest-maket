@@ -1,0 +1,121 @@
+<!--meta {"title": "Жилой комплекс — Everest", "desc": "Цены, планировки, условия покупки и расположение жилого комплекса. Запись на просмотр и скидка через Everest.", "nav": "katalog", "page": "zhk"} -->
+<section class="page-hero" style="padding-bottom:clamp(28px,3vw,44px)">
+  <div class="container">
+    <nav class="crumbs" aria-label="Навигационная цепочка"><a href="index.html">Главная</a><span aria-hidden="true">/</span><a href="katalog.html?mode=zhk">Жилые комплексы</a><span aria-hidden="true">/</span><span data-z="name"></span></nav>
+    <div class="row-between">
+      <div style="display:grid;gap:12px">
+        <h1 class="h1" style="font-size:clamp(2.2rem,1.5rem + 2.6vw,3.8rem)">ЖК «<span data-z="name"></span>»</h1>
+        <p class="loc-line" style="color:var(--on-dark-2)"><i class="metro-dot" data-z-metro-dot></i><span data-z="metro"></span>, <span data-z="district"></span></p>
+      </div>
+      <div class="chips" data-z-tags></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="zhk-page">
+  <div class="container">
+    <div class="zhk-hero">
+      <div class="gallery">
+        <div class="gallery__main">
+          <img id="gallery-main" src="assets/img/zhk-severnyj-bereg.webp" alt="" width="1400" height="1000">
+          <button class="btn btn--white btn--sm gallery__3d" type="button" data-tour="severnyj-bereg"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-cube"/></svg>3D-тур</button>
+        </div>
+        <div class="gallery__thumbs" id="gallery-thumbs"></div>
+      </div>
+      <aside class="zhk-side">
+        <div>
+          <span class="caption">Цена квартир</span>
+          <div class="zhk-side__price" data-z="price"></div>
+          <p class="muted mt-s" data-z="ppm"></p>
+        </div>
+        <div class="kv">
+          <div><span>Застройщик</span><b data-z="dev"></b></div>
+          <div><span>Класс</span><b data-z="cls"></b></div>
+          <div><span>Сдача</span><b data-z="deadline"></b></div>
+          <div><span>Отделка</span><b data-z="finish"></b></div>
+          <div><span>Площади</span><b data-z="areas"></b></div>
+          <div><span>В продаже</span><b data-z="onSale"></b></div>
+        </div>
+        <button class="btn btn--gold btn--block" type="button" data-open="callback" data-z-context="запись на просмотр" data-context-title="Записаться на просмотр">Записаться на просмотр</button>
+        <button class="btn btn--ghost btn--block" type="button" data-open="callback" data-z-context="узнать о скидке" data-context-title="Узнать о скидке в этом ЖК">Узнать о скидке</button>
+        <p class="caption">Покажем лично или по видео. Скидку и спецусловия согласуем с застройщиком до брони.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--frost section--tight" aria-labelledby="zf-title">
+  <div class="container">
+    <div class="row-between">
+      <h2 class="h2" id="zf-title">Квартиры в продаже</h2>
+      <div class="chips" id="zhk-rooms" role="group" aria-label="Тип квартиры"></div>
+    </div>
+    <div class="flat-grid mt-l" id="zhk-flats"></div>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="za-title">
+  <div class="container grid-2">
+    <div>
+      <h2 class="h2" id="za-title">О проекте</h2>
+      <p class="lead mt-m" data-z="about"></p>
+      <h3 class="h4 mt-l">Что рядом</h3>
+      <ul class="near mt-s" data-z-near></ul>
+    </div>
+    <div class="map" id="zhk-map" aria-label="Расположение на схеме Москвы"></div>
+  </div>
+</section>
+
+<section class="section section--frost section--tight" aria-labelledby="zc-title">
+  <div class="container">
+    <h2 class="h2" id="zc-title">Условия покупки</h2>
+    <div class="conditions mt-l">
+      <div class="condition"><b data-cond-rate>от 6%</b><p>Ипотека: семейная и ставки от застройщика. Подадим заявку сразу в 7 банков.</p></div>
+      <div class="condition"><b data-cond-save>до 20%</b><p>Выгода по сравнению с прайсом: скидка при полной оплате или по партнёрской программе Everest.</p></div>
+      <div class="condition"><b>0%</b><p>Рассрочка от застройщика до сдачи дома. Первый взнос от 10%.</p></div>
+    </div>
+    <h3 class="h3 mt-xl">Ход строительства</h3>
+    <div class="build-progress mt-m">
+      <figure><img src="assets/img/msk-towers.webp" alt="" loading="lazy"><figcaption>Сентябрь 2026. Монолит 18-го этажа, остекление до 9-го</figcaption></figure>
+      <figure><img src="assets/img/zhk-extra-4.webp" alt="" loading="lazy"><figcaption>Июль 2026. Фасадные работы первой очереди</figcaption></figure>
+      <figure><img src="assets/img/msk-glass.webp" alt="" loading="lazy"><figcaption>Май 2026. Благоустройство двора и паркинга</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--pine lead-block" aria-labelledby="zl-title">
+  <div class="container lead-grid">
+    <div>
+      <h2 class="h2" id="zl-title">Хотите посмотреть квартиру?</h2>
+      <p class="lead mt-m">Покажем вживую или по видео, расскажем о минусах ЖК, о которых молчат в офисе продаж, и посчитаем платёж под вашу семью.</p>
+      <div class="messengers">
+        <a class="msg-btn" href="https://t.me/katerina1018" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>Telegram</a>
+        <a class="msg-btn" href="https://wa.me/79670108118" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+        <a class="msg-btn" href="tel:+79670108118"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>+7&nbsp;967&nbsp;010-81-18</a>
+      </div>
+    </div>
+    <div class="form-card" data-form-host>
+      <form class="form-body" data-form novalidate>
+        <p class="form-card__title">Записаться на просмотр</p>
+        <div class="form-card__grid">
+          <div class="field"><label class="field__label" for="zl-name">Имя</label><input class="input" id="zl-name" name="name" autocomplete="given-name"></div>
+          <div class="field"><label class="field__label" for="zl-tel">Телефон</label><input class="input" id="zl-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><span class="field__error">Нужно 10 цифр после +7</span></div>
+        </div>
+        <label class="consent"><input type="checkbox" name="consent" checked><span>Согласна(-ен) на обработку персональных данных</span></label>
+        <button class="btn btn--gold btn--block" type="submit">Записаться</button>
+      </form>
+      <div class="form-success" role="status">
+        <div class="form-success__ico"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-check"/></svg></div>
+        <p class="form-card__title">Записали</p>
+        <p class="muted">Екатерина перезвонит и предложит время показа.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="zs-title">
+  <div class="container">
+    <h2 class="h2" id="zs-title">Похожие жилые комплексы</h2>
+    <div class="zhk-grid mt-l" id="zhk-similar"></div>
+  </div>
+</section>
