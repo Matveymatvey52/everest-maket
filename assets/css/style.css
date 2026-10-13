@@ -984,3 +984,19 @@ ul[class], ol[class] { list-style: none; padding: 0; }
 .vfilter__foot { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 14px; }
 #vitrine[hidden], #vitrine-map[hidden] { display: none !important; }
 .map__pin { text-decoration: none; }
+
+/* Первый экран: на телефоне фото сразу после заголовка */
+.hero__grid { grid-template-areas: "head" "photo" "tools"; }
+.hero__head { grid-area: head; }
+.hero__tools { grid-area: tools; }
+.hero__grid > .peak { grid-area: photo; }
+.hero__tools .search { margin-top: 0; }
+@media (max-width: 999px) {
+  .hero__grid { gap: 32px; }
+  .hero__grid > .peak { width: min(82%, 360px); }
+}
+@media (min-width: 1000px) {
+  .hero__grid { grid-template-areas: "head photo" "tools photo"; row-gap: 0; }
+  .hero__tools .search { margin-top: clamp(28px, 3vw, 40px); }
+  .hero__grid > .peak { align-self: center; }
+}
