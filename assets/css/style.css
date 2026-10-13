@@ -1003,3 +1003,17 @@ ul[class], ol[class] { list-style: none; padding: 0; }
 .hero__cta { margin-top: 0; }
 @media (min-width: 1000px) { .hero__cta { margin-top: clamp(28px, 3vw, 40px); } }
 @media (max-width: 479px) { .hero__cta .btn { flex: 1 1 100%; } }
+
+/* Телефон, вариант «фото сверху»: фото → заголовок → кнопки → текст и цифры */
+@media (max-width: 999px) {
+  .hero { padding-top: calc(var(--header-h) + 8px); }
+  .hero__grid { grid-template-areas: none; grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .hero__grid > * , .hero__head > *, .hero__tools > * { grid-area: auto; }
+  .hero__head, .hero__tools { display: contents; }
+  .hero__grid > .peak { grid-area: auto; order: 1; width: min(100%, 420px); margin-bottom: 4px; }
+  .hero__title { order: 2; margin-top: 28px; font-size: clamp(2rem, 1.2rem + 4vw, 2.8rem); }
+  .hero__cta { order: 3; margin-top: 24px; }
+  .hero__lead { order: 4; margin-top: 32px; font-size: 1rem; }
+  .hero__stats { order: 5; margin-top: 24px; }
+  .peak__caption { margin-top: 18px; }
+}
