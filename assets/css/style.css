@@ -1017,3 +1017,13 @@ ul[class], ol[class] { list-style: none; padding: 0; }
   .hero__stats { order: 5; margin-top: 24px; }
   .peak__caption { margin-top: 18px; }
 }
+
+/* Телефон: фото ниже, чтобы заголовок был виден на первом экране */
+@media (max-width: 999px) {
+  .hero__grid > .peak { width: 100%; max-width: 460px; }
+  .peak__frame { aspect-ratio: auto; height: clamp(260px, 44svh, 400px); }
+  .peak__frame img { object-position: 50% 22%; }
+  .peak__caption { margin-top: 14px; font-size: 0.82rem; line-height: 1.35; }
+  .peak__caption b { font-size: 0.95rem; }
+  .hero__title { margin-top: 22px; font-size: clamp(1.85rem, 1.2rem + 3.4vw, 2.6rem); }
+}
