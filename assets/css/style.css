@@ -966,3 +966,11 @@ ul[class], ol[class] { list-style: none; padding: 0; }
 }
 
 @media (max-width: 679px) { #vitrine > :nth-child(n+5) { display: none; } }
+
+/* Safari: карточки не растягиваются под родной размер картинок */
+.zhk-card, .flat-card { grid-template-columns: minmax(0, 1fr); }
+.zhk-card > *, .flat-card > *, .flat-card__body > *, .zhk-card__body > * { min-width: 0; }
+.money { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.flat-card__plan img, .zhk-card__media img { min-width: 0; max-width: 100%; }
+/* Золотая линия вокруг фото выходит за рамку на 14px со всех сторон */
+.peak__line { max-width: none; }
