@@ -1027,3 +1027,14 @@ ul[class], ol[class] { list-style: none; padding: 0; }
   .peak__caption b { font-size: 0.95rem; }
   .hero__title { margin-top: 22px; font-size: clamp(1.85rem, 1.2rem + 3.4vw, 2.6rem); }
 }
+
+/* Телефон: сначала заголовок (куда пришёл), сразу под ним фото */
+@media (max-width: 999px) {
+  .hero { padding-top: calc(var(--header-h) + 20px); }
+  .hero__title { order: 1; margin-top: 0; font-size: clamp(1.8rem, 1.15rem + 3.3vw, 2.5rem); }
+  .hero__grid > .peak { order: 2; margin-top: 30px; }
+  .peak__frame { height: clamp(240px, 40svh, 380px); }
+  .hero__cta { order: 3; }
+  .hero__lead { order: 4; }
+  .hero__stats { order: 5; }
+}
