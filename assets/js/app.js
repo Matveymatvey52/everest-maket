@@ -307,6 +307,44 @@
   window.addEventListener("scroll", () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
   onScroll();
 
+  /* ---------- Плавный переход к якорю ---------- */
+  // Быстро и мягко: фиксированная длительность, остановка от колеса и касания.
+  let scrollAnim = 0;
+  function smoothScrollTo(targetY) {
+    cancelAnimationFrame(scrollAnim);
+    const startY = window.scrollY;
+    const dist = targetY - startY;
+    if (Math.abs(dist) < 2) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { window.scrollTo(0, targetY); return; }
+    const dur = Math.min(900, Math.max(450, Math.abs(dist) * 0.35));
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    let t0 = null;
+    const stop = () => { cancelAnimationFrame(scrollAnim); off(); };
+    const off = () => { ["wheel", "touchstart", "keydown"].forEach((ev) => window.removeEventListener(ev, stop)); };
+    ["wheel", "touchstart", "keydown"].forEach((ev) => window.addEventListener(ev, stop, { passive: true, once: true }));
+    const step = (now) => {
+      if (t0 === null) t0 = now;
+      const k = Math.min(1, (now - t0) / dur);
+      window.scrollTo(0, startY + dist * ease(k));
+      if (k < 1) scrollAnim = requestAnimationFrame(step); else off();
+    };
+    scrollAnim = requestAnimationFrame(step);
+  }
+  function scrollToEl(el) {
+    const offset = (header ? header.offsetHeight : 0) + 12;
+    smoothScrollTo(Math.max(0, el.getBoundingClientRect().top + window.scrollY - offset));
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || a.hasAttribute("data-open") || a.hasAttribute("data-flat")) return;
+    const id = a.getAttribute("href").slice(1);
+    const el = id && document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    scrollToEl(el);
+    history.replaceState(null, "", "#" + id);
+  });
+
   /* ---------- Появление при прокрутке ---------- */
   function observeReveal(root = document) {
     const els = $$(".reveal:not(.is-in)", root);
@@ -568,7 +606,7 @@
       vq.district = !metro && dist ? dist.district : "";
       vq.text = !metro && !dist ? hq.text || "" : "";
       syncForm(); render();
-      $("#vitrina").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      scrollToEl($("#vitrina"));
     };
     syncForm();
     render();
