@@ -308,7 +308,7 @@
   onScroll();
 
   /* ---------- Плавный переход к якорю ---------- */
-  // Быстро и мягко: фиксированная длительность, остановка от колеса и касания.
+  // Быстро и мягко: 0,7–1 с, остановка от колеса и касания.
   let scrollAnim = 0;
   function smoothScrollTo(targetY) {
     cancelAnimationFrame(scrollAnim);
@@ -316,7 +316,7 @@
     const dist = targetY - startY;
     if (Math.abs(dist) < 2) return;
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) { window.scrollTo(0, targetY); return; }
-    const dur = Math.min(900, Math.max(450, Math.abs(dist) * 0.35));
+    const dur = Math.min(1000, Math.max(700, Math.abs(dist) * 0.5));
     const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
     let t0 = null;
     const stop = () => { cancelAnimationFrame(scrollAnim); off(); };

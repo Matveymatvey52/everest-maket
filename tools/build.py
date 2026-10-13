@@ -40,6 +40,19 @@ def nav_html(active, cls):
     return "\n        ".join(out)
 
 
+def versioned(html):
+    """Добавляет ?v=<хеш содержимого> к css и js, чтобы браузер не брал старую копию."""
+    import hashlib
+    def rep(m):
+        path = m.group(2)
+        full = os.path.join(ROOT, path)
+        if not os.path.exists(full):
+            return m.group(0)
+        h = hashlib.md5(open(full, "rb").read()).hexdigest()[:8]
+        return f'{m.group(1)}{path}?v={h}"'
+    return re.sub(r'((?:href|src)=")(assets/(?:css|js|fonts)/[^"?]+\.(?:css|js))"', rep, html)
+
+
 def build():
     parts = load_parts()
     pages_dir = os.path.join(SRC, "pages")
@@ -70,6 +83,7 @@ def build():
             + parts["scripts"] + "\n"
             + "</body>\n</html>\n"
         )
+        page = versioned(page)
         with open(os.path.join(ROOT, name), "w", encoding="utf-8") as f:
             f.write(page)
         built.append(name)
