@@ -447,6 +447,7 @@
       e.preventDefault();
       const n = D.FLATS.filter((f) => matchFlat(f, q)).length;
       if (!n) { openModal("modal-quiz"); return; }
+      if (applyToVitrine) { applyToVitrine(q); return; }
       const p = new URLSearchParams();
       if (q.rooms.size) p.set("rooms", [...q.rooms].join(","));
       if (q.max) p.set("max", q.max);
@@ -479,20 +480,98 @@
     fc.dataset.flat = f.id;
   }
 
-  // Витрина ЖК на главной
+  // Витрина ЖК на главной: фильтры, список и карта в одном блоке
   const vitrine = $("#vitrine");
+  let applyToVitrine = null;
   if (vitrine) {
-    const tabs = $$("[data-region]");
-    const render = (reg) => {
-      let list = D.ZHK.filter((z) => reg === "any" || (reg === "ready" ? z.deadline === "Сдан" : z.region === reg));
-      if (reg === "any") list = list.slice(0, 6);
-      vitrine.innerHTML = list.map(zhkCard).join("");
+    const form = $("#vfilter");
+    const vq = { rooms: new Set(), min: 0, max: 0, district: "", metro: "", deadline: "any", text: "", view: params.get("vview") === "map" ? "map" : "grid" };
+    const uniq = (arr) => [...new Set(arr)].sort((x, y) => x.localeCompare(y, "ru"));
+    $("[name=district]", form).insertAdjacentHTML("beforeend", uniq(D.ZHK.map((z) => z.district)).map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join(""));
+    $("[name=metro]", form).insertAdjacentHTML("beforeend", uniq(D.ZHK.map((z) => z.metro)).map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join(""));
+    const mapBox = $("#vitrine-map");
+    function render() {
+      const flats = D.FLATS.filter((f) => {
+        const z = zhkMap[f.zhk];
+        if (vq.district && z.district !== vq.district) return false;
+        if (vq.metro && z.metro !== vq.metro) return false;
+        return matchFlat(f, vq);
+      });
+      const ids = new Set(flats.map((f) => f.zhk));
+      const list = D.ZHK.filter((z) => ids.has(z.id));
+      $("#vcount").textContent = list.length
+        ? `${list.length} ${plural(list.length, "жилой комплекс", "жилых комплекса", "жилых комплексов")}, ${flats.length} ${plural(flats.length, "квартира", "квартиры", "квартир")}`
+        : "Ничего не нашлось";
+      const p = new URLSearchParams();
+      if (vq.rooms.size) p.set("rooms", [...vq.rooms].join(","));
+      if (vq.min) p.set("min", vq.min);
+      if (vq.max) p.set("max", vq.max);
+      if (vq.deadline !== "any") p.set("deadline", vq.deadline);
+      const q = vq.metro || (vq.district ? vq.district.split(", ").pop() : "") || vq.text;
+      if (q) p.set("q", q);
+      $("#vcat").href = "katalog.html" + (p.toString() ? "?" + p : "");
+      const empty = `<div class="empty" style="grid-column:1/-1"><div class="empty__ico">${ico("search", "ico--lg")}</div><p class="h3">Под эти условия ЖК не нашлось</p><p class="muted">Ослабьте фильтры или оставьте заявку: подберём вручную, в том числе из закрытых продаж.</p><div class="offer__cta" style="justify-content:center"><button class="btn btn--ghost" type="button" data-vreset>Сбросить фильтры</button><button class="btn btn--gold" type="button" data-open="quiz">Подобрать с Екатериной</button></div></div>`;
+      const isMap = vq.view === "map";
+      vitrine.hidden = isMap;
+      mapBox.hidden = !isMap;
+      if (isMap) {
+        renderMap($("#vmap"), list, (id) => $$("#vmap-list .map-item").forEach((m) => m.classList.toggle("is-active", m.dataset.id === id)));
+        $("#vmap-list").innerHTML = list.length ? list.map((z) => {
+          const cnt = flats.filter((f) => f.zhk === z.id).length;
+          return `<a class="map-item" data-id="${z.id}" href="zhk.html?id=${z.id}"><img src="${IMG}${z.img[0]}.webp" alt="" loading="lazy"><div><b>${esc(z.name)}</b><span>${esc(z.metro)}, сдача: ${z.deadline.toLowerCase()}</span><br><span>от ${mln(stats(z.id).min)}, ${cnt} ${plural(cnt, "квартира", "квартиры", "квартир")}</span></div></a>`;
+        }).join("") : empty;
+        $$("#vmap-list .map-item").forEach((m) => m.addEventListener("mouseenter", () => $$("#vmap .map__pin").forEach((pin) => pin.classList.toggle("is-active", pin.dataset.pin === m.dataset.id))));
+      } else {
+        vitrine.innerHTML = list.length ? list.map(zhkCard).join("") : empty;
+      }
+    }
+    function syncForm() {
+      $("[name=min]", form).value = vq.min || "";
+      $("[name=max]", form).value = vq.max || "";
+      $("[name=district]", form).value = vq.district;
+      $("[name=metro]", form).value = vq.metro;
+      $("[name=deadline]", form).value = vq.deadline;
+      $$("[data-vroom]", form).forEach((c) => c.setAttribute("aria-pressed", vq.rooms.has(c.dataset.vroom)));
+      $$("[data-vview]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.vview === vq.view));
+    }
+    form.addEventListener("input", (e) => {
+      const t = e.target;
+      if (t.name === "min" || t.name === "max") { vq[t.name] = parseFloat(String(t.value).replace(",", ".")) || 0; vq.text = ""; render(); }
+    });
+    form.addEventListener("change", (e) => {
+      const t = e.target;
+      if (["district", "metro", "deadline"].includes(t.name)) { vq[t.name] = t.value; vq.text = ""; render(); }
+    });
+    form.addEventListener("click", (e) => {
+      const c = e.target.closest("[data-vroom]");
+      if (!c) return;
+      const r = c.dataset.vroom;
+      vq.rooms.has(r) ? vq.rooms.delete(r) : vq.rooms.add(r);
+      syncForm(); render();
+    });
+    $$("[data-vview]").forEach((b) => b.addEventListener("click", () => { vq.view = b.dataset.vview; syncForm(); render(); }));
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("[data-vreset]")) return;
+      Object.assign(vq, { rooms: new Set(), min: 0, max: 0, district: "", metro: "", deadline: "any", text: "" });
+      syncForm(); render();
+    });
+    // Поиск на первом экране настраивает эту же витрину
+    applyToVitrine = (hq) => {
+      vq.rooms = new Set(hq.rooms);
+      vq.max = hq.max || 0;
+      vq.min = 0;
+      vq.deadline = hq.deadline || "any";
+      const t = (hq.text || "").trim().toLowerCase();
+      const metro = D.ZHK.find((z) => z.metro.toLowerCase() === t);
+      const dist = D.ZHK.find((z) => z.district.toLowerCase().includes(t) && t);
+      vq.metro = metro ? metro.metro : "";
+      vq.district = !metro && dist ? dist.district : "";
+      vq.text = !metro && !dist ? hq.text || "" : "";
+      syncForm(); render();
+      $("#vitrina").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     };
-    tabs.forEach((t) => t.addEventListener("click", () => {
-      tabs.forEach((x) => x.setAttribute("aria-pressed", x === t));
-      render(t.dataset.region);
-    }));
-    render("any");
+    syncForm();
+    render();
   }
 
   // Квартиры недели

@@ -185,19 +185,57 @@
   <div class="container">
     <div class="section-head section-head--split reveal">
       <h2 class="h2" id="vitrina-title">Жилые комплексы, которые мы проверили сами</h2>
-      <p class="lead">В карточке — цена, срок сдачи, застройщик, метраж и дорога до метро. Фильтры по цене, району и сроку, карта и 3D-туры — в каталоге.</p>
+      <p class="lead">В карточке — цена, срок сдачи, застройщик, метраж и дорога до метро. Отфильтруйте по цене, району, метро, сроку и типу квартиры прямо здесь или откройте карту.</p>
     </div>
-    <div class="filters-row">
-      <div class="chips" role="group" aria-label="Где искать">
-        <button class="chip" type="button" data-region="any" aria-pressed="true">Все</button>
-        <button class="chip" type="button" data-region="moscow" aria-pressed="false">Москва</button>
-        <button class="chip" type="button" data-region="newmoscow" aria-pressed="false">Новая Москва</button>
-        <button class="chip" type="button" data-region="mo" aria-pressed="false">Подмосковье</button>
-        <button class="chip" type="button" data-region="ready" aria-pressed="false">Дом сдан</button>
+    <form class="vfilter" id="vfilter" aria-label="Фильтры витрины" onsubmit="return false">
+      <div class="vfilter__grid">
+        <div class="field">
+          <span class="field__label" id="vf-price">Цена, млн ₽</span>
+          <div class="vfilter__price" role="group" aria-labelledby="vf-price">
+            <input class="input" name="min" inputmode="decimal" placeholder="от" aria-label="Цена от, млн ₽">
+            <input class="input" name="max" inputmode="decimal" placeholder="до" aria-label="Цена до, млн ₽">
+          </div>
+        </div>
+        <div class="field"><label class="field__label" for="vf-district">Район</label><select class="select" id="vf-district" name="district"><option value="">Любой район</option></select></div>
+        <div class="field"><label class="field__label" for="vf-metro">Метро или станция</label><select class="select" id="vf-metro" name="metro"><option value="">Любое метро</option></select></div>
+        <div class="field"><label class="field__label" for="vf-deadline">Срок сдачи</label>
+          <select class="select" id="vf-deadline" name="deadline">
+            <option value="any">Любой срок</option>
+            <option value="ready">Дом сдан</option>
+            <option value="2026">До конца 2026</option>
+            <option value="2027">До конца 2027</option>
+            <option value="2028">2028 и позже</option>
+          </select>
+        </div>
       </div>
-      <a class="link-arrow" href="katalog.html?mode=zhk&amp;view=map"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-map"/></svg>Открыть на карте</a>
+      <div class="vfilter__foot">
+        <div class="field">
+          <span class="field__label" id="vf-type">Тип квартиры</span>
+          <div class="chips" role="group" aria-labelledby="vf-type">
+            <button class="chip" type="button" data-vroom="studio" aria-pressed="false">Студия</button>
+            <button class="chip" type="button" data-vroom="1" aria-pressed="false">1-комнатная</button>
+            <button class="chip" type="button" data-vroom="2" aria-pressed="false">2-комнатная</button>
+            <button class="chip" type="button" data-vroom="3" aria-pressed="false">3-комнатная</button>
+            <button class="chip" type="button" data-vroom="4" aria-pressed="false">4+</button>
+          </div>
+        </div>
+        <button class="btn btn--ghost btn--sm" type="button" data-vreset>Сбросить фильтры</button>
+      </div>
+    </form>
+
+    <div class="filters-row">
+      <p class="result-count" id="vcount" aria-live="polite"></p>
+      <div class="f-row">
+        <a class="link-arrow" id="vcat" href="katalog.html">Смотреть квартиры в каталоге<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <div class="seg" role="group" aria-label="Вид">
+          <button type="button" data-vview="grid" aria-pressed="true"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-grid"/></svg>Списком</button>
+          <button type="button" data-vview="map" aria-pressed="false"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-map"/></svg>На карте</button>
+        </div>
+      </div>
     </div>
     <div class="zhk-grid" id="vitrine" aria-live="polite"></div>
+    <div class="map-wrap" id="vitrine-map" hidden><div class="map" id="vmap"></div><div class="map-list" id="vmap-list"></div></div>
+    <p class="caption mt-m">В макете фото ЖК для примера. На сайте здесь будут рендеры застройщиков, 3D-туры и Яндекс Карта.</p>
 
     <div class="row-between mt-xl reveal">
       <h3 class="h2" style="font-size:clamp(1.6rem,1.3rem + 1.2vw,2.4rem)">Квартиры недели со скидкой</h3>
