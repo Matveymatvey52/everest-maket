@@ -1000,3 +1000,6 @@ ul[class], ol[class] { list-style: none; padding: 0; }
   .hero__tools .search { margin-top: clamp(28px, 3vw, 40px); }
   .hero__grid > .peak { align-self: center; }
 }
+.hero__cta { margin-top: 0; }
+@media (min-width: 1000px) { .hero__cta { margin-top: clamp(28px, 3vw, 40px); } }
+@media (max-width: 479px) { .hero__cta .btn { flex: 1 1 100%; } }

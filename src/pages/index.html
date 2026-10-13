@@ -9,52 +9,10 @@
 
     </div>
     <div class="hero__tools">
-      <form class="search hero__fade" id="hero-search" role="search" aria-label="Поиск квартиры">
-        <div class="search__row">
-          <div class="field">
-            <span class="field__label" id="sr-rooms">Комнаты</span>
-            <div class="search__rooms" role="group" aria-labelledby="sr-rooms">
-              <button class="chip" type="button" data-room="studio" aria-pressed="false">Ст</button>
-              <button class="chip" type="button" data-room="1" aria-pressed="false">1</button>
-              <button class="chip" type="button" data-room="2" aria-pressed="false">2</button>
-              <button class="chip" type="button" data-room="3" aria-pressed="false">3</button>
-              <button class="chip" type="button" data-room="4" aria-pressed="false">4+</button>
-            </div>
-          </div>
-          <div class="field">
-            <label class="field__label" for="sr-max">Бюджет до</label>
-            <select class="select" id="sr-max" name="max">
-              <option value="0">Любой</option>
-              <option value="8">8 млн ₽</option>
-              <option value="10">10 млн ₽</option>
-              <option value="12">12 млн ₽</option>
-              <option value="15">15 млн ₽</option>
-              <option value="20">20 млн ₽</option>
-              <option value="30">30 млн ₽</option>
-              <option value="50">50 млн ₽</option>
-            </select>
-          </div>
-          <div class="field">
-            <label class="field__label" for="sr-deadline">Срок сдачи</label>
-            <select class="select" id="sr-deadline" name="deadline">
-              <option value="any">Любой</option>
-              <option value="ready">Дом сдан</option>
-              <option value="2026">До конца 2026</option>
-              <option value="2027">До конца 2027</option>
-              <option value="2028">2028 и позже</option>
-            </select>
-          </div>
-        </div>
-        <div class="search__foot">
-          <div class="field">
-            <label class="field__label" for="sr-q">Район, метро или ЖК</label>
-            <input class="input" id="sr-q" name="q" list="places" placeholder="Например, Красногорск или «Технопарк»" autocomplete="off">
-            <datalist id="places" data-places></datalist>
-          </div>
-          <button class="btn btn--gold" type="submit" data-search-submit style="align-self:end">Показать квартиры</button>
-        </div>
-        <p class="search__hint">Не знаете, с чего начать? <a href="#" data-open="quiz">Ответьте на пять вопросов</a>, подберём вручную.</p>
-      </form>
+      <div class="offer__cta hero__fade hero__cta">
+        <button class="btn btn--gold" type="button" data-open="quiz">Подобрать квартиру</button>
+        <a class="btn btn--ghost-light" href="#vitrina">Смотреть квартиры<svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+      </div>
 
       <div class="hero__stats hero__fade">
         <div class="hero__stat"><b>8 лет</b><span>на рынке новостроек</span></div>
