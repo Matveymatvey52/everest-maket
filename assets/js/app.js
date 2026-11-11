@@ -125,7 +125,7 @@
         ${rooms}
         <div class="zhk-card__facts">
           <div><span class="fact__k">Сдача</span><span class="fact__v">${esc(z.deadline)}</span></div>
-          <div><span class="fact__k">Застройщик</span><span class="fact__v">${esc(z.dev || "уточню")}</span></div>
+          <div><span class="fact__k">Класс</span><span class="fact__v">${esc(z.cls)}</span></div>
           <div><span class="fact__k">В продаже</span><span class="fact__v">${z.onSale ? z.onSale + " " + plural(z.onSale, "квартира", "квартиры", "квартир") : "по запросу"}</span></div>
         </div>
         <div class="zhk-card__price"><b>от ${mln(z.min)}</b>${z.ppm ? `<span>от ${nf.format(Math.round(z.ppm / 1000))} тыс. ₽/м²</span>` : ""}</div>
@@ -449,7 +449,7 @@
   // Подсказки для поиска
   $$("datalist[data-places]").forEach((dl) => {
     const set = new Set();
-    D.ZHK.forEach((z) => { set.add(z.name); if (z.metro) set.add(z.metro); set.add(z.district.split(", ").pop()); if (z.dev) set.add(z.dev); });
+    D.ZHK.forEach((z) => { set.add(z.name); if (z.metro) set.add(z.metro); set.add(z.district.split(", ").pop()); });
     dl.innerHTML = [...set].map((v) => `<option value="${esc(v)}"></option>`).join("");
   });
 
