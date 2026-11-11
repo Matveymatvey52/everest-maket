@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Каталог новостроек Москвы и Подмосковья — Everest</title>
-<meta name="description" content="Квартиры в новостройках Москвы и области: планировки, цены, первый взнос и платёж. Фильтры по цене, району, метро, сроку сдачи и комнатам, карта ЖК.">
+<title>Каталог новостроек Москвы и Подмосковья — Екатерина Чукомина</title>
+<meta name="description" content="Новостройки Москвы и области: цены по типам квартир, сроки сдачи, застройщики и карта ЖК. Подбор и агентская скидка через личного брокера.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#13271f">
-<meta property="og:title" content="Каталог новостроек Москвы и Подмосковья — Everest">
-<meta property="og:description" content="Квартиры в новостройках Москвы и области: планировки, цены, первый взнос и платёж. Фильтры по цене, району, метро, сроку сдачи и комнатам, карта ЖК.">
+<meta property="og:title" content="Каталог новостроек Москвы и Подмосковья — Екатерина Чукомина">
+<meta property="og:description" content="Новостройки Москвы и области: цены по типам квартир, сроки сдачи, застройщики и карта ЖК. Подбор и агентская скидка через личного брокера.">
 <meta property="og:image" content="assets/img/msk-city-dusk.webp">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%2313271f'/%3E%3Cpath d='M8 34V17L20 7l12 10v17Z' fill='none' stroke='%23cdb078' stroke-width='2.4'/%3E%3Cpath d='M11 29l5-6 3 3 5-7 5 7' fill='none' stroke='%23cdb078' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/tenor-sans-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css?v=3c31a105">
-<link rel="stylesheet" href="assets/css/style.css?v=809d9fb4">
+<link rel="stylesheet" href="assets/css/style.css?v=1a95c61b">
 <script>document.documentElement.classList.add("js")</script>
 
 </head>
@@ -65,9 +65,9 @@
 <a class="skip-link" href="#main">К содержимому</a>
 <header class="site-header">
   <div class="container site-header__in">
-    <a class="logo" href="index.html" aria-label="Everest — на главную">
+    <a class="logo" href="index.html" aria-label="Екатерина Чукомина, на главную">
       <svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg>
-      <span class="logo__word"><span class="logo__name">EVEREST</span><span class="logo__sub">новостройки Москвы и области</span></span>
+      <span class="logo__word"><span class="logo__name">ЧУКОМИНА</span><span class="logo__sub">брокер по новостройкам</span></span>
     </a>
     <nav class="nav" aria-label="Основное меню">
         <a class="nav__link" href="katalog.html" aria-current="page">Каталог</a>
@@ -88,7 +88,7 @@
 </header>
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Меню">
   <div class="mobile-menu__top">
-    <a class="logo" href="index.html"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word"><span class="logo__name">EVEREST</span></span></a>
+    <a class="logo" href="index.html"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word"><span class="logo__name">ЧУКОМИНА</span></span></a>
     <button class="icon-btn" type="button" data-menu-close aria-label="Закрыть меню"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
   </div>
   <nav class="mobile-menu__nav" aria-label="Меню">
@@ -111,7 +111,7 @@
   <div class="container">
     <nav class="crumbs" aria-label="Навигационная цепочка"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav>
     <h1 class="h1" style="font-size:clamp(2.2rem,1.5rem + 2.6vw,3.8rem);max-width:16ch">Каталог новостроек Москвы и Подмосковья</h1>
-    <p class="lead">Планировка, цена, первый взнос и платёж в месяц — сразу в карточке. Отметьте понравившиеся квартиры сердечком, пришлём по ним условия.</p>
+    <p class="lead">Цены по типам квартир, срок сдачи и застройщик — сразу в карточке. Нажмите на тип квартиры, пришлю свободные варианты и планировки. Цены на <span data-updated></span>.</p>
   </div>
 </section>
 
@@ -125,22 +125,21 @@
         <button class="chip" type="button" data-room="3" aria-pressed="false">3</button>
         <button class="chip" type="button" data-room="4" aria-pressed="false">4+</button>
       </div>
-      <div class="f-price">
-        <input class="input" name="min" inputmode="decimal" placeholder="Цена от, млн" aria-label="Цена от, млн ₽">
-        <input class="input" name="max" inputmode="decimal" placeholder="до, млн" aria-label="Цена до, млн ₽">
-      </div>
       <div class="f-search">
         <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
         <input class="input" name="q" list="places" placeholder="Район, метро, ЖК или застройщик" aria-label="Район, метро, ЖК или застройщик" autocomplete="off">
         <datalist id="places" data-places></datalist>
       </div>
-      <button class="btn btn--ghost btn--sm f-toggle-more" type="button" data-more aria-expanded="false"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-sliders"/></svg>Ещё фильтры</button>
+      <button class="btn btn--ghost btn--sm f-toggle-more" type="button" data-more aria-expanded="false"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-sliders"/></svg>Фильтры<b></b></button>
     </div>
     <div class="f-row f-more">
+      <div class="f-price">
+        <input class="input" name="min" inputmode="decimal" placeholder="Цена от, млн" aria-label="Цена от, млн ₽">
+        <input class="input" name="max" inputmode="decimal" placeholder="до, млн" aria-label="Цена до, млн ₽">
+      </div>
       <select class="select" name="deadline" aria-label="Срок сдачи">
         <option value="any">Любой срок сдачи</option>
         <option value="ready">Дом сдан</option>
-        <option value="2026">Сдача до конца 2026</option>
         <option value="2027">Сдача до конца 2027</option>
         <option value="2028">Сдача в 2028 и позже</option>
       </select>
@@ -150,17 +149,11 @@
         <option value="newmoscow">Новая Москва</option>
         <option value="mo">Подмосковье</option>
       </select>
-      <select class="select" name="finish" aria-label="Отделка">
-        <option value="any">Любая отделка</option>
-        <option value="rough">Без отделки</option>
-        <option value="wb">White box</option>
-        <option value="full">Чистовая или ремонт</option>
-      </select>
       <select class="select" name="cls" aria-label="Класс жилья">
         <option value="any">Любой класс</option>
-        <option value="комфорт">Комфорт</option>
-        <option value="бизнес">Бизнес</option>
-        <option value="премиум">Премиум</option>
+        <option value="Премиум">Премиум</option>
+        <option value="Бизнес">Бизнес</option>
+        <option value="Комфорт">Комфорт</option>
       </select>
       <button class="btn btn--ghost btn--sm" type="button" data-reset>Сбросить</button>
     </div>
@@ -171,19 +164,15 @@
   <div class="container">
     <div class="catalog-toolbar">
       <div class="f-row">
-        <div class="seg" role="group" aria-label="Что показывать">
-          <button type="button" data-mode="flats" aria-pressed="true">Квартиры</button>
-          <button type="button" data-mode="zhk" aria-pressed="false">Жилые комплексы</button>
-        </div>
         <span class="result-count" id="result-count" aria-live="polite"></span>
       </div>
       <div class="f-row">
         <button class="chip" type="button" data-fav-filter aria-pressed="false"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-heart"/></svg>Избранное</button>
         <select class="select" name="sort" aria-label="Сортировка">
+          <option value="premium">Сначала премиум и бизнес</option>
           <option value="price-asc">Сначала дешевле</option>
           <option value="price-desc">Сначала дороже</option>
-          <option value="area-desc">Сначала больше</option>
-          <option value="save-desc">Самая большая выгода</option>
+          <option value="deadline">Сначала готовые</option>
         </select>
         <div class="seg" role="group" aria-label="Вид">
           <button type="button" data-view="grid" aria-pressed="true"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-grid"/></svg>Списком</button>
@@ -192,11 +181,12 @@
       </div>
     </div>
     <div id="catalog"></div>
+    <p class="caption mt-m">Цены и наличие — по данным застройщиков на <span data-updated></span>. Условия могут меняться: уточняйте актуальные предложения перед покупкой.</p>
 
     <div class="closed">
       <div class="closed__text">
-        <h2 class="h2" style="font-size:clamp(1.7rem,1.3rem + 1.4vw,2.6rem)">Не нашли подходящую? В базе больше 500 ЖК</h2>
-        <p>Здесь показана малая часть. Ответьте на пять вопросов, и мы пришлём три варианта с расчётом платежа, в том числе из закрытых продаж.</p>
+        <h2 class="h2" style="font-size:clamp(1.7rem,1.3rem + 1.4vw,2.6rem)">Не нашли подходящий? В базе больше 500 ЖК</h2>
+        <p>Здесь показана малая часть. Ответьте на пять вопросов, и я пришлю три варианта с расчётом платежа, в том числе из закрытых продаж.</p>
       </div>
       <div class="offer__cta" style="align-self:center">
         <button class="btn btn--gold" type="button" data-open="quiz">Подобрать вручную</button>
@@ -210,8 +200,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="logo" href="index.html"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word"><span class="logo__name">EVEREST</span><span class="logo__sub">Екатерина Чукомина</span></span></a>
-        <p>Личный брокер по новостройкам Москвы и Подмосковья. Подберём квартиру, договоримся о скидке и проведём сделку до ключей. Для покупателя бесплатно.</p>
+        <a class="logo" href="index.html"><svg class="logo__mark" aria-hidden="true"><use href="#i-logo"/></svg><span class="logo__word"><span class="logo__name">ЧУКОМИНА</span><span class="logo__sub">Екатерина, брокер по новостройкам</span></span></a>
+        <p>Личный брокер по новостройкам Москвы и Подмосковья. Подберу квартиру, добьюсь агентской скидки и проведу сделку до ключей. Цена — как в офисе продаж или ниже.</p>
       </div>
       <div class="footer-col">
         <h4>Покупателям</h4>
@@ -243,8 +233,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Everest. ИП Чукомина Екатерина, реквизиты добавим перед запуском. <a href="#" data-open="callback" data-context="Вопрос о политике конфиденциальности">Политика конфиденциальности</a></span>
-      <span class="demo-note"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-eye"/></svg>Демоверсия: ЖК, цены, цифры и отзывы условные</span>
+      <span>© 2026 Екатерина Чукомина. ИП, реквизиты добавим перед запуском. <a href="politika.html">Политика обработки персональных данных</a></span>
+      <span class="demo-note"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-eye"/></svg>Демоверсия: ЖК и цены настоящие (ndv.ru, <span data-updated></span>), отзывы пока условные</span>
     </div>
   </div>
 </footer>
@@ -254,19 +244,20 @@
     <button class="icon-btn modal__close" type="button" data-close aria-label="Закрыть"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
     <div class="form-body">
       <h2 class="modal__title" id="mc-title" data-context-title data-default="Перезвоним и ответим на вопросы">Перезвоним и ответим на вопросы</h2>
-      <p class="modal__text">Екатерина перезвонит в течение 15 минут. Работаем ежедневно с 9:00 до 21:00.</p>
+      <p class="modal__text">Перезвоню в течение 15 минут. Работаю ежедневно с 9:00 до 21:00.</p>
       <form class="form-body mt-s" data-form novalidate>
         <input type="hidden" name="context" data-context>
+        <input type="hidden" name="kind" data-kind-field>
         <div class="field"><label class="field__label" for="cb-name">Имя</label><input class="input" id="cb-name" name="name" autocomplete="given-name" placeholder="Как к вам обращаться"></div>
         <div class="field"><label class="field__label" for="cb-tel">Телефон</label><input class="input" id="cb-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required><span class="field__error">Проверьте номер: нужно 10 цифр после +7</span></div>
-        <label class="consent"><input type="checkbox" name="consent" checked><span>Согласна(-ен) на обработку персональных данных для обратной связи</span></label>
+        <label class="consent"><input type="checkbox" name="consent"><span>Согласна(-ен) на <a href="politika.html" target="_blank">обработку персональных данных</a> для обратной связи</span></label>
         <button class="btn btn--gold btn--block" type="submit">Жду звонка</button>
       </form>
     </div>
     <div class="form-success" role="status">
       <div class="form-success__ico"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-check"/></svg></div>
-      <p class="modal__title" style="padding-right:0">Заявка у Екатерины</p>
-      <p class="muted">Перезвоним в течение 15 минут. Если удобнее переписка, напишите в <a href="https://t.me/katerina1018" target="_blank" rel="noopener">Telegram</a>.</p>
+      <p class="modal__title" style="padding-right:0">Заявка у меня</p>
+      <p class="muted">Перезвоню в течение 15 минут. Если удобнее переписка, напишите в <a href="https://t.me/katerina1018" target="_blank" rel="noopener">Telegram</a>.</p>
       <button class="btn btn--ghost" type="button" data-close>Хорошо</button>
     </div>
   </div>
@@ -277,7 +268,7 @@
   <div class="modal__box" data-form-host>
     <button class="icon-btn modal__close" type="button" data-close aria-label="Закрыть"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
     <div class="form-body">
-      <h2 class="modal__title" id="mq-title">Подберём 3 квартиры за 24 часа</h2>
+      <h2 class="modal__title" id="mq-title">Подберу 3 квартиры за сутки</h2>
       <p class="modal__text"><span data-quiz-step>Шаг 1 из 6</span>. Ответы помогут не присылать лишнего.</p>
       <form id="quiz" data-form novalidate>
         <div class="quiz__progress"><span></span></div>
@@ -305,10 +296,10 @@
           <legend class="quiz__q">Какой бюджет?</legend>
           <div class="quiz__opts mt-s">
             <label class="opt"><input type="radio" name="budget" value="до 10 млн"><span>До 10 млн ₽</span></label>
-            <label class="opt"><input type="radio" name="budget" value="10–15 млн"><span>10–15 млн ₽</span></label>
-            <label class="opt"><input type="radio" name="budget" value="15–25 млн"><span>15–25 млн ₽</span></label>
-            <label class="opt"><input type="radio" name="budget" value="25–50 млн"><span>25–50 млн ₽</span></label>
-            <label class="opt"><input type="radio" name="budget" value="от 50 млн"><span>От 50 млн ₽</span></label>
+            <label class="opt"><input type="radio" name="budget" value="10–20 млн"><span>10–20 млн ₽</span></label>
+            <label class="opt"><input type="radio" name="budget" value="20–40 млн"><span>20–40 млн ₽</span></label>
+            <label class="opt"><input type="radio" name="budget" value="40–80 млн"><span>40–80 млн ₽</span></label>
+            <label class="opt"><input type="radio" name="budget" value="от 80 млн"><span>От 80 млн ₽</span></label>
           </div>
         </fieldset>
         <fieldset class="quiz__step" style="border:0;padding:0;margin:0">
@@ -341,7 +332,7 @@
             <div class="field"><label class="field__label" for="qz-name">Имя</label><input class="input" id="qz-name" name="name" autocomplete="given-name"></div>
             <div class="field"><label class="field__label" for="qz-tel">Телефон</label><input class="input" id="qz-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><span class="field__error">Нужно 10 цифр после +7</span></div>
           </div>
-          <label class="consent"><input type="checkbox" name="consent" checked><span>Согласна(-ен) на обработку персональных данных</span></label>
+          <label class="consent"><input type="checkbox" name="consent"><span>Согласна(-ен) на <a href="politika.html" target="_blank">обработку персональных данных</a></span></label>
           <button class="btn btn--gold btn--block" type="submit">Получить подборку</button>
         </fieldset>
         <div class="quiz__nav">
@@ -352,8 +343,8 @@
     </div>
     <div class="form-success" role="status">
       <div class="form-success__ico"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-check"/></svg></div>
-      <p class="modal__title" style="padding-right:0">Подборка будет в течение 24 часов</p>
-      <p class="muted">Екатерина изучит ответы и пришлёт три варианта с расчётом платежа. Пока можно посмотреть <a href="katalog.html">каталог</a>.</p>
+      <p class="modal__title" style="padding-right:0">Заявка у меня</p>
+      <p class="muted">Перезвоню в течение 15 минут в рабочее время, уточню пару деталей. Подборку с расчётом платежа пришлю на следующий день. Пока можно посмотреть <a href="katalog.html">каталог</a>.</p>
       <button class="btn btn--ghost" type="button" data-close>Хорошо</button>
     </div>
   </div>
@@ -381,7 +372,7 @@
     <a href="https://t.me/katerina1018" target="_blank" rel="noopener" role="menuitem"><span class="ico-wrap"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg></span><span>Telegram<small>@katerina1018</small></span></a>
     <a href="https://wa.me/79670108118" target="_blank" rel="noopener" role="menuitem"><span class="ico-wrap"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></span><span>WhatsApp<small>+7 967 010-81-18</small></span></a>
     <a href="tel:+79670108118" role="menuitem"><span class="ico-wrap"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></span><span>Позвонить<small>ежедневно 9:00–21:00</small></span></a>
-    <button type="button" data-open="callback" role="menuitem"><span class="ico-wrap"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span>Перезвоните мне<small>за 15 минут</small></span></button>
+    <button type="button" data-open="callback" role="menuitem"><span class="ico-wrap"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span>Перезвоните мне<small>в течение 15 минут</small></span></button>
   </div>
   <button class="fab__btn" type="button" aria-expanded="false" aria-label="Связаться с Екатериной"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-chat"/></svg></button>
 </div>
@@ -390,7 +381,8 @@
   <a class="icon-btn" href="tel:+79670108118" aria-label="Позвонить"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></a>
   <a class="icon-btn" href="https://t.me/katerina1018" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg></a>
 </div>
-<script src="assets/js/data.js?v=85ec4d1a" defer></script>
-<script src="assets/js/app.js?v=42ef2edd" defer></script>
+<script src="assets/js/zhk.js?v=b370a3b2" defer></script>
+<script src="assets/js/data.js?v=4d2743e1" defer></script>
+<script src="assets/js/app.js?v=e1b67839" defer></script>
 </body>
 </html>

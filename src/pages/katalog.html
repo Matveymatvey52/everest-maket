@@ -1,10 +1,10 @@
-<!--meta {"title": "Каталог новостроек Москвы и Подмосковья — Everest", "desc": "Квартиры в новостройках Москвы и области: планировки, цены, первый взнос и платёж. Фильтры по цене, району, метро, сроку сдачи и комнатам, карта ЖК.", "nav": "katalog", "page": "catalog"} -->
+<!--meta {"title": "Каталог новостроек Москвы и Подмосковья — Екатерина Чукомина", "desc": "Новостройки Москвы и области: цены по типам квартир, сроки сдачи, застройщики и карта ЖК. Подбор и агентская скидка через личного брокера.", "nav": "katalog", "page": "catalog"} -->
 <section class="page-hero page-hero--img">
   <div class="page-hero__bg" aria-hidden="true"><img src="assets/img/msk-towers.webp" alt=""></div>
   <div class="container">
     <nav class="crumbs" aria-label="Навигационная цепочка"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav>
     <h1 class="h1" style="font-size:clamp(2.2rem,1.5rem + 2.6vw,3.8rem);max-width:16ch">Каталог новостроек Москвы и Подмосковья</h1>
-    <p class="lead">Планировка, цена, первый взнос и платёж в месяц — сразу в карточке. Отметьте понравившиеся квартиры сердечком, пришлём по ним условия.</p>
+    <p class="lead">Цены по типам квартир, срок сдачи и застройщик — сразу в карточке. Нажмите на тип квартиры, пришлю свободные варианты и планировки. Цены на <span data-updated></span>.</p>
   </div>
 </section>
 
@@ -18,22 +18,21 @@
         <button class="chip" type="button" data-room="3" aria-pressed="false">3</button>
         <button class="chip" type="button" data-room="4" aria-pressed="false">4+</button>
       </div>
-      <div class="f-price">
-        <input class="input" name="min" inputmode="decimal" placeholder="Цена от, млн" aria-label="Цена от, млн ₽">
-        <input class="input" name="max" inputmode="decimal" placeholder="до, млн" aria-label="Цена до, млн ₽">
-      </div>
       <div class="f-search">
         <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
         <input class="input" name="q" list="places" placeholder="Район, метро, ЖК или застройщик" aria-label="Район, метро, ЖК или застройщик" autocomplete="off">
         <datalist id="places" data-places></datalist>
       </div>
-      <button class="btn btn--ghost btn--sm f-toggle-more" type="button" data-more aria-expanded="false"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-sliders"/></svg>Ещё фильтры</button>
+      <button class="btn btn--ghost btn--sm f-toggle-more" type="button" data-more aria-expanded="false"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-sliders"/></svg>Фильтры<b></b></button>
     </div>
     <div class="f-row f-more">
+      <div class="f-price">
+        <input class="input" name="min" inputmode="decimal" placeholder="Цена от, млн" aria-label="Цена от, млн ₽">
+        <input class="input" name="max" inputmode="decimal" placeholder="до, млн" aria-label="Цена до, млн ₽">
+      </div>
       <select class="select" name="deadline" aria-label="Срок сдачи">
         <option value="any">Любой срок сдачи</option>
         <option value="ready">Дом сдан</option>
-        <option value="2026">Сдача до конца 2026</option>
         <option value="2027">Сдача до конца 2027</option>
         <option value="2028">Сдача в 2028 и позже</option>
       </select>
@@ -43,17 +42,11 @@
         <option value="newmoscow">Новая Москва</option>
         <option value="mo">Подмосковье</option>
       </select>
-      <select class="select" name="finish" aria-label="Отделка">
-        <option value="any">Любая отделка</option>
-        <option value="rough">Без отделки</option>
-        <option value="wb">White box</option>
-        <option value="full">Чистовая или ремонт</option>
-      </select>
       <select class="select" name="cls" aria-label="Класс жилья">
         <option value="any">Любой класс</option>
-        <option value="комфорт">Комфорт</option>
-        <option value="бизнес">Бизнес</option>
-        <option value="премиум">Премиум</option>
+        <option value="Премиум">Премиум</option>
+        <option value="Бизнес">Бизнес</option>
+        <option value="Комфорт">Комфорт</option>
       </select>
       <button class="btn btn--ghost btn--sm" type="button" data-reset>Сбросить</button>
     </div>
@@ -64,19 +57,15 @@
   <div class="container">
     <div class="catalog-toolbar">
       <div class="f-row">
-        <div class="seg" role="group" aria-label="Что показывать">
-          <button type="button" data-mode="flats" aria-pressed="true">Квартиры</button>
-          <button type="button" data-mode="zhk" aria-pressed="false">Жилые комплексы</button>
-        </div>
         <span class="result-count" id="result-count" aria-live="polite"></span>
       </div>
       <div class="f-row">
         <button class="chip" type="button" data-fav-filter aria-pressed="false"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-heart"/></svg>Избранное</button>
         <select class="select" name="sort" aria-label="Сортировка">
+          <option value="premium">Сначала премиум и бизнес</option>
           <option value="price-asc">Сначала дешевле</option>
           <option value="price-desc">Сначала дороже</option>
-          <option value="area-desc">Сначала больше</option>
-          <option value="save-desc">Самая большая выгода</option>
+          <option value="deadline">Сначала готовые</option>
         </select>
         <div class="seg" role="group" aria-label="Вид">
           <button type="button" data-view="grid" aria-pressed="true"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-grid"/></svg>Списком</button>
@@ -85,11 +74,12 @@
       </div>
     </div>
     <div id="catalog"></div>
+    <p class="caption mt-m">Цены и наличие — по данным застройщиков на <span data-updated></span>. Условия могут меняться: уточняйте актуальные предложения перед покупкой.</p>
 
     <div class="closed">
       <div class="closed__text">
-        <h2 class="h2" style="font-size:clamp(1.7rem,1.3rem + 1.4vw,2.6rem)">Не нашли подходящую? В базе больше 500 ЖК</h2>
-        <p>Здесь показана малая часть. Ответьте на пять вопросов, и мы пришлём три варианта с расчётом платежа, в том числе из закрытых продаж.</p>
+        <h2 class="h2" style="font-size:clamp(1.7rem,1.3rem + 1.4vw,2.6rem)">Не нашли подходящий? В базе больше 500 ЖК</h2>
+        <p>Здесь показана малая часть. Ответьте на пять вопросов, и я пришлю три варианта с расчётом платежа, в том числе из закрытых продаж.</p>
       </div>
       <div class="offer__cta" style="align-self:center">
         <button class="btn btn--gold" type="button" data-open="quiz">Подобрать вручную</button>

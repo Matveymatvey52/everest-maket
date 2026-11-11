@@ -1,0 +1,24 @@
+# Каждые 2 часа забирает новости недвижимости с РБК и обновляет assets/data/news.json
+name: Новости РБК
+on:
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: news
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 -I tools/news.py
+      - name: Сохранить, если что-то изменилось
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add assets/data/news.json
+          git diff --cached --quiet || (git commit -m "Новости РБК" && git push)
