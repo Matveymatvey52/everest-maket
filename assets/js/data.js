@@ -1,6 +1,6 @@
 /* Данные сайта: спецпредложения, статьи, услуги.
    ЖК и цены — в zhk.js (собирается tools/import_ndv.py с ndv.ru). */
-window.EVEREST = (function () {
+window.SITE = (function () {
   const IMG = "assets/img/";
 
   // Спецпредложения из партнёрских каналов застройщиков (пересылала Екатерина 11.11.2026).

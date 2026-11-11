@@ -2,7 +2,7 @@
    Карта подгружает Leaflet только когда её открыли. */
 (function () {
   "use strict";
-  const D = window.EVEREST;
+  const D = window.SITE;
   const IMG = D.IMG;
   document.documentElement.classList.add("js");
 
