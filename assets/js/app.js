@@ -173,8 +173,6 @@
       return;
     }
     if (e.target.closest("[data-close]") || e.target.classList.contains("modal__scrim")) { closeModal(e.target.closest(".modal")); return; }
-    const v = e.target.closest("[data-video]");
-    if (v) { e.preventDefault(); showInfo("Видеоотзыв", `<p class="modal__text">Здесь будет видео: ${esc(v.dataset.video)}. Настоящие видео загрузим, когда клиенты дадут согласие.</p>`); return; }
     const sv = e.target.closest("[data-svc]");
     if (sv) { e.preventDefault(); showService(sv.dataset.svc); }
   });
@@ -314,6 +312,31 @@
   }
   $$("input[type=tel]").forEach(maskPhone);
 
+  /* ---------- Яндекс Метрика ---------- */
+  // Грузится, только если в config.js указан номер счётчика.
+  const YM_ID = Number(window.YM_ID) || 0;
+  if (YM_ID) {
+    window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+    window.ym.l = Date.now();
+    const s = document.createElement("script");
+    s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js";
+    document.head.appendChild(s);
+    window.ym(YM_ID, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+  }
+  function goal(name, params) {
+    if (YM_ID && window.ym) window.ym(YM_ID, "reachGoal", name, params || {});
+  }
+  // Клики по Telegram, WhatsApp и телефону — отдельные цели.
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("[data-open=quiz]")) goal("quiz_open");
+    const a = e.target.closest("a[href]");
+    if (!a) return;
+    const h = a.getAttribute("href");
+    if (h.startsWith("tel:")) goal("click_phone");
+    else if (h.includes("t.me/")) goal("click_telegram");
+    else if (h.includes("wa.me/")) goal("click_whatsapp");
+  });
+
   // Номер заявки: дата + 4 знака. По нему Екатерина найдёт клиента в таблице.
   function leadId() {
     const d = new Date();
@@ -330,7 +353,7 @@
       id: leadId(),
       created: new Date().toISOString(),
       kind: data.kind || form.dataset.kind || (form.id === "quiz" ? "Подбор (квиз)" : "Обратная связь"),
-      name: data.name || "", phone: data.tel || "", context: data.context || "",
+      name: data.name || "", phone: data.tel || "", email: data.email || "", context: data.context || "",
       answers: data, page: location.pathname + location.search,
       source: { first: store.get("src:first", {}), last: store.get("src:last", {}) },
       stage: "Новая",
@@ -338,6 +361,10 @@
     const all = store.get("leads", []);
     all.push(lead);
     store.set("leads", all.slice(-50));
+    goal("lead", { kind: lead.kind });
+    if (lead.kind.startsWith("Гайд")) goal("lead_guide");
+    else if (lead.kind.startsWith("Подбор")) goal("lead_quiz");
+    else goal("lead_form");
     if (LEAD_ENDPOINT) {
       fetch(LEAD_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lead), keepalive: true }).catch(() => {});
     }
@@ -357,6 +384,14 @@
         return;
       }
       if (field) { field.classList.remove("is-error"); tel.removeAttribute("aria-invalid"); }
+      const mail = $("input[type=email][required]", form);
+      if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value.trim())) {
+        mail.closest(".field")?.classList.add("is-error");
+        mail.setAttribute("aria-invalid", "true");
+        mail.focus();
+        return;
+      }
+      if (mail) { mail.closest(".field")?.classList.remove("is-error"); mail.removeAttribute("aria-invalid"); }
       const consent = $("input[name=consent]", form);
       if (consent && !consent.checked) {
         consent.closest(".consent")?.classList.add("is-error");
@@ -380,13 +415,15 @@
           let no = $("[data-lead-no]", succ);
           if (!no) { no = document.createElement("p"); no.className = "caption"; no.dataset.leadNo = ""; succ.insertBefore(no, $("button", succ)); }
           no.textContent = "Номер заявки: " + lead.id;
+          const dl = $("[data-guide-dl]", succ);
+          if (dl && window.GUIDE_FILE) { dl.href = window.GUIDE_FILE; dl.hidden = false; $("[data-guide-later]", succ)?.setAttribute("hidden", ""); }
           succ.setAttribute("tabindex", "-1");
           succ.focus({ preventScroll: true });
         }
         form.reset();
       }, 600);
     });
-    $$("input[type=tel]", form).forEach((i) => i.addEventListener("input", () => i.closest(".field")?.classList.remove("is-error")));
+    $$("input[type=tel], input[type=email]", form).forEach((i) => i.addEventListener("input", () => i.closest(".field")?.classList.remove("is-error")));
   }
   $$("form[data-form]").forEach(bindForm);
 
@@ -508,7 +545,7 @@
   const vitrine = $("#vitrine");
   if (vitrine) {
     const form = $("#vfilter");
-    const LIMIT = 6;
+    const LIMIT = matchMedia("(max-width: 639px)").matches ? 3 : 6;
     const vq = { rooms: new Set(), min: 0, max: 0, region: "any", cls: "any", deadline: "any", view: params.get("vview") === "map" ? "map" : "grid" };
     const mapBox = $("#vitrine-map");
     function render() {

@@ -1186,3 +1186,39 @@ ul[class], ol[class] { list-style: none; padding: 0; }
 .map__pin-n { display: none; }
 .map__pin:hover .map__pin-n, .map__pin.is-active .map__pin-n { display: inline; }
 .leaflet-marker-icon:hover, .leaflet-marker-icon:focus-within { z-index: 1000 !important; }
+
+/* ==========================================================================
+   Телефон: короче главная. Стопки карточек — в ленты, которые листаются вбок
+   ========================================================================== */
+.compare-head { margin-top: clamp(64px, 8vw, 112px); }
+@media (max-width: 639px) {
+  .ba-block { display: none; }
+  .compare-head { margin-top: 0; }
+  .swipe-m {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 84%; grid-template-columns: none;
+    gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) 10px; scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .swipe-m::-webkit-scrollbar { display: none; }
+  .swipe-m > * { scroll-snap-align: start; min-width: 0; }
+  .life.swipe-m { grid-auto-columns: 72%; }
+  .life.swipe-m > * { grid-column: auto; grid-row: auto; }
+  .swipe-hint { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 0.8rem; color: var(--ink-3); }
+  .section--pine .swipe-hint { color: var(--on-dark-2); }
+}
+@media (min-width: 640px) { .swipe-hint { display: none; } }
+@media (max-width: 639px) {
+  .plans.swipe-m { padding-top: 14px; }
+  .trust .portrait { display: none; }
+}
+
+/* Страница гайда */
+.guide-page { padding-top: calc(var(--header-h) + clamp(28px, 4vw, 56px)); }
+.section--pine .form-card .muted, .section--pine .form-card .lead { color: var(--ink-2); }
+.guide-page .crumbs, .guide-page .crumbs a { color: var(--on-dark-2); }
+.guide-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.guide-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 1.05rem; color: #fff; }
+.guide-list .ico { color: var(--gold-2); flex: none; margin-top: 3px; }
+.guide-note { color: var(--on-dark-2); }
+.form-success .link-arrow { justify-self: center; }

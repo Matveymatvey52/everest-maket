@@ -92,7 +92,7 @@
       <h2 class="h2" id="spec-title">Спецпредложения недели</h2>
       <p class="lead">Закрытые продажи, скидки только через брокера и акции застройщиков. Каждое действует несколько дней. Новые публикую в <a href="https://t.me/InvestEkaterina" target="_blank" rel="noopener">Telegram-канале</a>.</p>
     </div>
-    <div class="offers__grid" id="offers"></div>
+    <div class="offers__grid swipe-m" id="offers"></div>
     <p class="caption offers__note">* Условия могут меняться — уточняйте актуальные предложения перед покупкой. Названия ЖК в закрытых продажах сообщаю лично.</p>
   </div>
 </section>
@@ -144,7 +144,7 @@
           <a class="btn btn--ghost" href="https://t.me/katerina1018" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>Задать вопрос</a>
         </div>
       </div>
-      <div class="benefits reveal">
+      <div class="benefits swipe-m reveal">
         <div class="benefit"><span class="benefit__ico"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></span><div><h3>Подбор</h3><p>Три варианта за сутки под ваш бюджет, район и сроки. Без навязывания «своего» застройщика.</p></div></div>
         <div class="benefit"><span class="benefit__ico"><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg></span><div><h3>Агентская скидка</h3><p>Застройщики дают клиентам брокеров дополнительную скидку. Если прийти в офис продаж самому, её не будет.</p></div></div>
         <div class="benefit"><span class="benefit__ico"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>Сопровождение</h3><p>Проверяю застройщика и договор, помогаю с ипотекой и приёмкой. Веду до ключей.</p></div></div>
@@ -162,8 +162,9 @@
 </section>
 
 <!-- 6. Было → стало и сравнение -->
-<section class="section" aria-labelledby="ba-title">
+<section class="section" aria-labelledby="compare-title">
   <div class="container">
+    <div class="ba-block">
     <div class="section-head section-head--split reveal">
       <h2 class="h2" id="ba-title">Избавлю от головной боли при выборе новостройки</h2>
       <p class="lead">Четыре вещи, на которых покупатели теряют время и деньги, и что я делаю вместо этого.</p>
@@ -175,8 +176,9 @@
       <div class="ba__row"><div class="ba__was"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="ba__label">Было</span>Банк отказал или предлагает дорогую ипотеку</div></div><i class="ba__arrow" aria-hidden="true"></i><div class="ba__now"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="ba__label">Стало</span>Заявка сразу в 7 банков, выбираем лучшую ставку</div></div></div>
       <div class="ba__row"><div class="ba__was"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><div><span class="ba__label">Было</span>Боитесь скрытых комиссий и доплат</div></div><i class="ba__arrow" aria-hidden="true"></i><div class="ba__now"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><div><span class="ba__label">Стало</span>Все условия и цена — до брони, письменно</div></div></div>
     </div>
+    </div>
 
-    <div class="section-head reveal" style="margin-top:clamp(64px,8vw,112px)">
+    <div class="section-head reveal compare-head">
       <h2 class="h2" id="compare-title">Я не агентство. Я ваш личный брокер по новостройкам</h2>
     </div>
     <div class="compare reveal" role="table" aria-label="Сравнение: личный брокер, офис продаж, агентство">
@@ -287,14 +289,14 @@
     <div class="section-head reveal">
       <h2 class="h2" id="steps-title">4 шага до вашей новой квартиры</h2>
     </div>
-    <ol class="steps reveal">
+    <ol class="steps swipe-m reveal">
       <li class="step"><span class="step__n">1</span><h3 class="h3">Заявка или звонок</h3><p>Оставляете заявку на сайте или пишете в Telegram. Перезваниваю и задаю пять вопросов о бюджете и планах.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>15 минут</span></li>
       <li class="step"><span class="step__n">2</span><h3 class="h3">Персональный подбор</h3><p>Присылаю три варианта с расчётом платежа и честными минусами каждого ЖК.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>на следующий день</span></li>
       <li class="step"><span class="step__n">3</span><h3 class="h3">Просмотр или онлайн-презентация</h3><p>Едем на объект вместе или показываю квартиру по видео, если вы в другом городе.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>1–3 дня</span></li>
       <li class="step"><span class="step__n">4</span><h3 class="h3">Бронь и сделка</h3><p>Фиксируем цену, проверяем договор, оформляем ипотеку. Веду до ключей.</p><span class="step__time"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg>1–2 недели</span></li>
     </ol>
 
-    <div class="plans reveal">
+    <div class="plans swipe-m reveal">
       <div class="plan-card plan-card--main">
         <span class="tag tag--gold plan-card__badge">Основная услуга</span>
         <h3 class="h3">Покупка новостройки</h3>
@@ -338,13 +340,7 @@
   <div class="container">
     <div class="reviews" style="margin-top:0">
       <div class="row-between reveal"><h2 class="h2" id="reviews-title">Отзывы покупателей</h2><a class="link-arrow" href="obo-mne.html#otzyvy">Все отзывы<svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a></div>
-      <div class="videos reveal">
-        <button class="video" type="button" data-video="семья, двухкомнатная в Подмосковье"><img src="assets/img/fam-green-sofa.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Семья с двумя детьми</b><span>Двухкомнатная в Подмосковье</span></span></button>
-        <button class="video" type="button" data-video="Игорь, инвестор"><img src="assets/img/int-olive.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Игорь, инвестор</b><span>Две студии под сдачу</span></span></button>
-        <button class="video" type="button" data-video="Марина и Кирилл"><img src="assets/img/fam-moving.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Марина и Кирилл</b><span>Переезд в Новую Москву</span></span></button>
-        <button class="video" type="button" data-video="Елена, переезд из Сургута"><img src="assets/img/fam-empty-flat.webp" alt="" loading="lazy"><span class="video__play"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-play"/></svg></span><span class="video__cap"><b>Елена</b><span>Купила онлайн из Сургута</span></span></button>
-      </div>
-      <div class="texts reveal">
+      <div class="texts swipe-m reveal">
         <figure class="review"><p>«Полгода искали двушку под семейную ипотеку. Екатерина за сутки прислала три варианта, один — в ЖК, о котором мы даже не слышали. Застройщик дал скидку, а ипотеку одобрили на второй день».</p><figcaption class="review__who"><span><b>Анна и Сергей</b><span>Подмосковье, сентябрь 2026</span></span><span class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></figcaption></figure>
         <figure class="review"><p>«Покупал студию под сдачу. Екатерина посчитала доходность по каждому варианту и отговорила от ЖК, где сдачу переносили второй раз. Квартиру уже сдаю, окупаемость сходится с её расчётом».</p><figcaption class="review__who"><span><b>Дмитрий</b><span>Москва, август 2026</span></span><span class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></figcaption></figure>
         <figure class="review"><p>«Переезжали из Казани и Москву не знали совсем. Показы прошли онлайн, на сделку прилетели один раз. В договоре Екатерина нашла пункт о переносе сроков, и застройщик его убрал».</p><figcaption class="review__who"><span><b>Ольга</b><span>Новая Москва, июль 2026</span></span><span class="stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span></figcaption></figure>
@@ -360,7 +356,7 @@
       <h2 class="h2" id="life-title">Представьте свой первый вечер в новой квартире</h2>
       <p class="lead">Новый двор без машин, своя кухня-гостиная, тишина вместо съёмной квартиры.</p>
     </div>
-    <div class="life reveal">
+    <div class="life swipe-m reveal">
       <figure class="life__item"><img src="assets/img/fam-empty-flat.webp" alt="Пара с собакой сидит на полу в пустой новой квартире" loading="lazy">
         <div class="life__quote"><p>«Полгода искали сами, нашли за неделю. Сейчас пьём кофе на своей кухне и не верим, что это наша квартира».</p><span>Анна и Сергей</span></div>
       </figure>
@@ -410,7 +406,7 @@
       </div>
       <div class="gift">
         <span class="gift__ico"><svg class="ico ico--lg" aria-hidden="true"><use href="#i-gift"/></svg></span>
-        <p><b>В подарок — гайд «Семейная ипотека 2026».</b> Ставки по числу детей, лимиты и способ сохранить 6%. Пришлю вместе с подборкой.</p>
+        <p><b>В подарок — гайд «Семейная ипотека 2026».</b> Ставки по числу детей, лимиты и способ сохранить 6%. Пришлю вместе с подборкой или <a href="gaid.html">заберите сразу</a>.</p>
       </div>
     </div>
     <div class="form-card reveal" data-form-host>
@@ -446,7 +442,7 @@
       </div>
       <a class="btn btn--ghost" href="zhurnal.html#novosti">Все новости<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
-    <div class="news-grid reveal" data-news="4"></div>
+    <div class="news-grid swipe-m reveal" data-news="4"></div>
 
     <div class="row-between reveal" style="margin:clamp(56px,7vw,96px) 0 clamp(28px,3.5vw,48px)">
       <div style="display:grid;gap:14px;max-width:720px">
@@ -455,6 +451,6 @@
       </div>
       <a class="btn btn--ghost" href="zhurnal.html">Все статьи<svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
-    <div class="posts reveal" id="journal-teaser"></div>
+    <div class="posts swipe-m reveal" id="journal-teaser"></div>
   </div>
 </section>
